@@ -1,0 +1,24 @@
+{
+  "name": "socketio",
+  "version": "1.0.0",
+  "description": "Dashboard de telemetria Cheetah",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Caio Tácito",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@rodrigogs/mysql-events": "^0.6.0",
+    "chart.js": "^2.9.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "mysql": "^2.18.1",
+    "serialport": "^9.0.7",
+    "socket.io": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

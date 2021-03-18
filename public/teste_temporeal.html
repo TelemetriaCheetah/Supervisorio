@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pagina inicial</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1>bem vindo a pagina do server de telemetria!</h1>
+    <div id = "resposta">
+    </div>
+    <div id="contain">
+        <div id="canvas-holder" style="float:right;">
+            <canvas id="myChart" width="1000" height="450">
+        </canvas></div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/teste_temporeal.js"></script>
+  </body>
+</html>

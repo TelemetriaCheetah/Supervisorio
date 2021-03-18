@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Análise de dados</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div id="data">
+      <input id="timeBegin" type="time">Hora de início</input><br>
+      <input id="timeEnd" type="time">Hora de término</input><br>
+      <input id="dateBegin" type="date">Data de início</input><br>
+      <input id="dateEnd" type="date">Data de término</input><br>
+      <button id="btn">Atualizar</button>
+    </div>
+    <div id = "resposta">
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/teste_tabela.js"></script>
+  </body>
+</html>
