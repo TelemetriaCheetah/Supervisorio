@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pagina inicial</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1>Página de teste do chart.js</h1>
+    <div id = "resposta">
+    </div>
+    <div id="data">
+      <input id="timeBegin" type="time">Hora de início</input><br>
+      <input id="timeEnd" type="time">Hora de término</input><br>
+      <input id="dateBegin" type="date">Data de início</input><br>
+      <input id="dateEnd" type="date">Data de término</input><br>
+      <button id="btn">Atualizar</button>
+    </div>
+    <div id="contain">
+        <div id="canvas-holder" style="float:left;">
+            <canvas id="myChart" width="1000" height="450">
+        </canvas></div>
+        <div id="canvas-holder-keymsg" style="float:right;">
+            <canvas id="myChart2" width="1000" height="450">
+        </canvas></div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/teste_grafico.js"></script>
+  </body>
+</html>

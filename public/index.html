@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Pagina inicial</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1>bem vindo a pagina do server de telemetria!</h1>
+    <div id="contain">
+        <div class="canvas-holder" style="float:right;">
+            <canvas id="myChart" width="1000" height="450"></canvas>
+        </div>
+        <div class="canvas-holder" >
+            <canvas id="velocimetro" width="500" height="200"></canvas>
+            <span id="velocimetroValor"></span>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/gauge.min.js"></script>
+    <script src="js/serial_converter.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
