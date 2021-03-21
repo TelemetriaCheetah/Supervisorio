@@ -1,6 +1,15 @@
+@font-face {
+  font-family: digital;
+  src: url(../fonts/digital-readout/TrueType/SFDigitalReadout-Medium.ttf);
+}
 
 * {
   box-sizing: border-box;
+}
+
+body
+{
+  background-color: #FFFFFF;
 }
 
 table {
@@ -22,4 +31,19 @@ th {
 td {
   border: 1px solid #cccccc; /* Change the border-color of cells here */
   padding: 8px;
+}
+
+#contain {
+               background-image: url('../images/cheetah250.png');
+               background-repeat: no-repeat;
+               background-position: 100px 100px;
+           }
+#velocimetroValor
+{
+  color: #FFFFFF;
+}
+#unidade
+{
+  color: #FFFFFF;
+  font-family: digital;
 }
