@@ -17,7 +17,7 @@ class ConversorSerial
     {
       for(var i = 0 ; i < this.ns ; i++)
       {
-        sensores[i] = this.data.substring(i*5,i*5+5);
+        sensores[i] = parseInt(this.data.substring(i*5,i*5+5),10);
       }
     }
     return sensores;
@@ -29,7 +29,7 @@ class ConversorSerial
     {
       for(var i = 0 ; i < this.nc ; i++)
       {
-        chaves[i] = this.data[i + this.ns*5];
+        chaves[i] = parseInt(this.data[i + this.ns*5],10);
       }
     }
     return chaves;
