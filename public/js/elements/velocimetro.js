@@ -4,9 +4,9 @@ class Velocimetro
   {
     var opts =
     {
-      angle: -0.5,
-      lineWidth: 0.08,
-      radiusScale: 1,
+      angle: -0.13,
+      lineWidth: 0.07,
+      radiusScale: 0.7,
       pointer:
       {
         length: 0.68,
@@ -23,7 +23,7 @@ class Velocimetro
       staticLabels:
       {
         font: "30px digital",
-        labels: [0,10,20,30,40,50,60,70,80,90,100,110,120,130,140],
+        labels: [0,10,20,30,40,50,60,70,80,90,100],
         color: "#FFFFFF",
         fractionDigits: 0
       },
@@ -45,7 +45,7 @@ class Velocimetro
     this.gauge.maxValue = 100;
     this.gauge.setMinValue(0);
     this.gauge.animationSpeed = 128;
-    this.gauge.set(150);
+    this.gauge.set(70);
     this.gauge.setTextField(document.getElementById('velocimetroValor'));
   }
   atualizaVelocimetro(velvelocimetro)
