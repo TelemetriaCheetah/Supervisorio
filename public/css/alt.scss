@@ -1,0 +1,64 @@
+@font-face
+{
+  font-family: digital;
+  src: url(../fonts/digital-readout/TrueType/SFDigitalReadout-Medium.ttf);
+}
+
+@font-face
+{
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+padding: 0;
+}
+
+body
+{
+  background-color: #0F0E1E;
+}
+
+section {
+  width: auto;
+  border: 1px solid #2d2d2d;
+  display: flex;
+  justify-content: center;
+}
+
+.teste {
+  order: 3;
+  color: #fff;
+  background: #2d2d2d;
+  padding: 12px;
+  display: inline-block;
+    flex-grow: 1;
+}
+
+#contain
+{
+  order: 2;
+  padding: 12px;
+  display: inline-block;
+  flex-grow: 1;
+}
+
+.barra_lateral
+{
+  order: 1;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 300px;
+}

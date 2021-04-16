@@ -1,54 +1,164 @@
-@font-face {
+@font-face
+{
   font-family: digital;
   src: url(../fonts/digital-readout/TrueType/SFDigitalReadout-Medium.ttf);
 }
 
+@font-face
+{
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
+  margin: 0;
+padding: 0;
 }
 
 body
 {
-  background-color: #000000;
+  background-color: #0F0E1E;
 }
 
-table {
-  border-spacing: 0px;
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 15px;
-  background-color: transparent; /* Change the background-color of table here */
-  text-align: left; /* Change the text-alignment of table here */
+.container-1
+{
+  display: flex;
+  justify-content: center;
 }
 
-th {
-  font-weight: bold;
-  border: 1px solid #cccccc; /* Change the border-color of heading here */
-  padding: 8px;
+.container-1 div
+{
+  padding-right: 10px;
 }
 
-td {
-  border: 1px solid #cccccc; /* Change the border-color of cells here */
-  padding: 8px;
+.barra_lateral
+{
+    background-color: var(--space-cadet);
+    flex: 1;
+    order: 1;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 250px;
+    margin: 0px;
+    height: 100%;
+    left: 0;
 }
 
-#contain {
-               background-image: url('../images/cheetah250.png');
-               background-repeat: no-repeat;
-               background-position: 100px 200px;
-           }
+.texto
+{
+    color: var(--cerulean-crayola);
+    font-size: 25px;
+    line-height: 80px;
+    text-align: center;
+    font-weight: 600;
+}
+
+nav ul
+{
+    line-height: 300%;
+
+}
+
+nav ul li
+{
+    background: var(--space-cadet);
+    list-style: none;
+    text-decoration: none;
+
+}
+
+nav ul li a
+{
+    color: var(--light-gray);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 10%;
+    display: block;
+    width: 100%;
+    border-left: 4px solid transparent;
+}
+
+nav ul li a:hover
+{
+    color: white;
+    background: #001845;
+    border-left-color: red;
+}
+
+.logo img
+{
+    margin-left: 10px;
+    width: 90%;
+    height: 90%;
+}
+
+#contain
+{
+  flex: 1;
+  order: 2;
+}
+
+
+#velocimetro
+{
+   display: inline-block;
+  background-image: url('../images/vel_arthur.png');
+  background-repeat: no-repeat;
+  background-position: 0px 40px;
+  background-size: contain;
+}
 #velocimetroValor
 {
   color: #FFFFFF;
+  position: relative;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 30px;
+  left: -250px;
+  top: -50px;
 }
-#unidade
+.distancia
+{
+  flex: 0;
+  order: 4;
+}
+#texto
 {
   color: #FFFFFF;
-  font-family: digital;
+  position: relative;
+  font-family: Montserrat;
+  font-weight: bold;
+  width: 190px;
+  font-size: 30px;
+  left: -250px;
+  top: 100px;
 }
-
+#texto2
+{
+  color: #FFFFFF;
+  position: relative;
+  font-family: Montserrat;
+  font-weight: bold;
+  width: 190px;
+  font-size: 30px;
+  left: -250px;
+  top: 70px;
+}
 .battery {
+  flex: 1;
+  order: 3;
   border: 3px solid #fff;
   background: #e81309;
   width: 190px;
@@ -101,8 +211,10 @@ td {
 
 #airelay
 {
+  flex: 2;
+  order: 1;
   color: #FFFFFF;
-  font-family: digital;
+  font-family: Montserrat;
   font-size: 50px;
   height: 500px;
   width: 500px;
