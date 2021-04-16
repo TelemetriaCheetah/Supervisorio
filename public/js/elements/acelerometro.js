@@ -21,12 +21,10 @@ function draw() {
     console.log("x : " + x); //DEBUG
     console.log("z : " + z); //DEBUG
     //rotate the figure from our real orientation
-    if(x>2000)
-      rotateX(0);
-    else
-      rotateY(0);
-    rotateZ(0);
-    translate(y/10, 20);
+    rotateX(x/10000);
+    rotateY(y/10000);
+    rotateZ(z/10000);
+    //translate(y/10, 20);
     //the figure is a box
     box(100, 50, 100);
 }
