@@ -4,45 +4,29 @@ class Velocimetro
   {
     var opts =
     {
-      angle: -0.13,
-      lineWidth: 0.07,
-      radiusScale: 0.7,
+      angle: -0.21, // The span of the gauge arc
+      lineWidth: 0.00001, // The line thickness
+      radiusScale: 0.9, // Relative radius
       pointer:
       {
-        length: 0.68,
-        strokeWidth: 0.02,
-        color: '#FFFFFF'
+        iconScale: 0.09,
+        length: 0.39, // // Relative to gauge radius
+        strokeWidth: 0.01, // The thickness
+        color: "#ff3e42" // Fill color
       },
-      limitMax: false,
-      limitMin: false,
-      colorStart: '#9C2424',
-      colorStop: '#C40000',
-      strokeColor: '#222729',
+      limitMax: false,     // If false, max value increases automatically if value > maxValue
+      limitMin: false,     // If true, the min value of the gauge will be fixed
+      colorStart: '#CFCFCF',   // Colorsmyicon
+      colorStop: '#DADADA',    // just experiment with them
+      strokeColor: '#E0E0E0',  // to see which ones work best for you
       generateGradient: true,
-      highDpiSupport: true,
-      staticLabels:
-      {
-        font: "30px digital",
-        labels: [0,10,20,30,40,50,60,70,80,90,100],
-        color: "#FFFFFF",
-        fractionDigits: 0
-      },
-      renderTicks:
-      {
-        divisions: 10,
-        divWidth: 0.6,
-        divLength: 0.7,
-        divColor: '#FFFFFF',
-        subDivisions: 2,
-        subLength: 0.39,
-        subWidth: 0.2,
-        subColor: '#FFFFFF'
-      }
+      highDpiSupport: true,     // High resolution support
+
     };
 
     var target = document.getElementById('velocimetro');
     this.gauge = new Gauge(target).setOptions(opts);
-    this.gauge.maxValue = 100;
+    this.gauge.maxValue = 130;
     this.gauge.setMinValue(0);
     this.gauge.animationSpeed = 128;
     this.gauge.set(70);

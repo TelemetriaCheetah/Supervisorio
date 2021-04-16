@@ -9,14 +9,11 @@ const CheetahLinkFormatter = require('./js/CheetahLinkFormatter');
 const CheetahLinkParser = require('./js/CheetahLinkParser');
 const DatabaseHandler = require('./js/DatabaseHandler');
 const ttyPort = "/dev/ttyACM0";
-const port = new serialport(ttyPort,
-{
-  baudRate:9600,
-});
+const port = new serialport(ttyPort,{baudRate:9600});
 
 console.log("Módulos carregados");
 
-const parser = port.pipe(new CheetahLinkParser({length: 12}));
+const parser = port.pipe(new CheetahLinkParser({length: 28}));
 const db = new DatabaseHandler();
 var serial = new CheetahLinkFormatter();
 var config = JSON.parse(fs.readFileSync('./config.json'));
@@ -41,10 +38,12 @@ io.on("connection", socket =>
   });
 });
 
+port.flush(function(err,results){});
 parser.on("data", (data) =>
 {
-  port.flush(function(err,results){});
   serial.setData(data , config.qtdMedicao , config.qtdDiscretos);
-  db.insertIntoDatabase(serial.getAnalogArray() , serial.getDigitalArray() );
+  //db.insertIntoDatabase(serial.getAnalogArray() , serial.getDigitalArray() );
+  //console.log(db.getSensorArray("A" , 0));
+  console.log(serial.getAnalogArray());
   console.log(serial.getDigitalArray());
 });
