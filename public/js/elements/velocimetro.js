@@ -30,7 +30,7 @@ class Velocimetro
     this.gauge.setMinValue(0);
     this.gauge.animationSpeed = 128;
     this.gauge.set(70);
-    this.gauge.setTextField(document.getElementById('velocimetroValor'));
+    //this.gauge.setTextField(document.getElementById('velocimetroValor'));
   }
   atualizaVelocimetro(velvelocimetro)
   {

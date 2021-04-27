@@ -1,41 +1,25 @@
 const socket = io();
 
-var batteryLevel = document.getElementById("bateria1");
-var air = document.getElementById("airelay");
-var regua = document.getElementById("texto");
-var regua2 = document.getElementById("texto2");
 var velocimetro = new Velocimetro();
+var indicador1 = new Indicador(1);
+var indicador2 = new Indicador(2);
+var indicador3 = new Indicador(3);
+var indicador4 = new Indicador(4);
+var indicador5 = new Temperatura(5);
+var indicador6 = new Temperatura(6);
+var indicador7 = new Temperatura(7);
+var indicador8 = new Temperatura(8);
+var indicador9 = new Temperatura(9);
+var indicador10 = new Temperatura(10);
+var indicador11 = new Temperatura(11);
+var indicador12 = new Temperatura(12);
 
 socket.on("analog", (message) =>
 {
-  console.log(message);
+  console.log(message[0]);
   let sensor1 = message[0];
   let sensor2 = message[1];
-  velocimetro.atualizaVelocimetro(sensor1/70);
-  batteryLevel.style.width = 75-(sensor1/20) + "%";
-  let corrente = ( ((4.83 - sensor1/204.8)/12000) *1000).toFixed(3) ;
-  regua.innerHTML = corrente + "mA";
-  let A =  3.9114610;
-  let w = 7.2873782;
-  let y0 = 0.0475052733;
-  let v =  22.79147837;
-  //regua.innerHTML = (sensor1/204.8).toFixed(2) + "V";
-});
-
-socket.on("digital" , (message) =>
-{
-  let c_air = message[40];
-  console.log(message);
-  if(c_air)
-  {
-    air.innerHTML = "AIR FECHADO";
-    air.style.backgroundImage = "url(\'./images/air_closed.svg\')";
-  }
-  else
-  {
-    air.innerHTML = "AIR ABERTO";
-    air.style.backgroundImage = "url(\'./images/air_open.svg\')";
-  }
+  velocimetro.atualizaVelocimetro(sensor1);
 });
 
 var myVar = setInterval(emiteMensagem, 50); //Timer principal

@@ -4,28 +4,23 @@ function setup() {
     canvas.parent('container');//store the canvas into a div with id='container'
 }
 //global variable : 3 axis
-var x = 0;
-var y = 0;
-var z = 0;
+var accelX = 0;
+var accelY = 0;
+var accelZ = 0;
 socket.on("analog", (message) =>
 {
-  console.log(message);
-  x = message[0];
-  y = message[1];
-
+  //console.log(message);
+  accelX = message[0]-16384;
+  accelY = message[1]-16384;
+  accelZ = message[2]-16384;
 });
 
 function draw() {
-    background(255,0,0); //tone of the backgroud behind our figure
-    console.log("y : " + y); //DEBUG
-    console.log("x : " + x); //DEBUG
-    console.log("z : " + z); //DEBUG
-    //rotate the figure from our real orientation
-    rotateX(x/10000);
-    rotateY(y/10000);
-    rotateZ(z/10000);
-    //translate(y/10, 20);
-    //the figure is a box
+    background(255,0,0);
+    let pitch = 180 * Math.atan(accelX/ sqrt(accelY*accelY + accelZ*accelZ))/Math.PI;
+    let roll = 180 * Math.atan(accelY/ sqrt(accelX*accelX + accelZ*accelZ))/Math.PI;
+    rotateX(-roll/50);
+    rotateZ(-pitch/45);
     box(100, 50, 100);
 }
 
