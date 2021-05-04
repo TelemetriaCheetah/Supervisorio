@@ -8,16 +8,16 @@ console.log("Inicializando servidor de telemetria Cheetah E-racing\nPor favor ag
 const CheetahLinkFormatter = require('./js/CheetahLinkFormatter');
 const CheetahLinkParser = require('./js/CheetahLinkParser');
 const DatabaseHandler = require('./js/DatabaseHandler');
-const ttyPort = "/dev/ttyACM2";
+const ttyPort = "/dev/ttyACM1";
 const port = new serialport(ttyPort,{baudRate:115200});
 
 console.log("Módulos carregados");
 
-const parser = port.pipe(new CheetahLinkParser({length: 80})); //EM BYTES, CONSULTAR DOCUMENTACAO
+const parser = port.pipe(new CheetahLinkParser({length: 10})); //EM BYTES, CONSULTAR DOCUMENTACAO
 const db = new DatabaseHandler();
 var serial = new CheetahLinkFormatter();
 var config = JSON.parse(fs.readFileSync('./config.json'));
-
+var cont = 0;
 const httpPort = 2000;
 const app = express();
 const server = http.createServer(app);
@@ -38,12 +38,22 @@ io.on("connection", socket =>
   });
 });
 
++new Date
+var inicio = Date.now();
 port.flush(function(err,results){});
 parser.on("data", (data) =>
 {
   serial.setData(data , config.qtdMedicao , config.qtdDiscretos);
+  console.log(data);
   //db.insertIntoDatabase(serial.getAnalogArray() , serial.getDigitalArray() );
   //console.log(db.getSensorArray("A" , 0));
-  console.log(serial.getAnalogArray());
-  console.log(serial.getDigitalArray());
+  //console.log(cont);
+  //console.log(data);
+  /*if(Date.now() >= inicio + 302000)
+  {
+    console.log("Contagem Final = " + cont);
+    process.exit();
+  }
+  else if(Date.now() >= inicio + 2000)
+    cont++;*/
 });

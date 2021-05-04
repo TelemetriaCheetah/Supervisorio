@@ -3,15 +3,28 @@
   <head>
     <meta charset="utf-8">
     <title>Pagina inicial</title>
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/index.min.css">
   </head>
   <body>
     <div class="grid-principal">
 
+      <div class="barra-titulo2">
+          <div class="barra-titulo-interno2">
+            <div class=""><b>MySQL:</b> Conectado</div>
+            <div class=""><b>ID Teste:</b> 23</div>
+            <div class=""><b>Usuário:</b> Caio Tácito</div>
+            <div class=""><b>TS:</b> 2021-04-27-23-37-42</div>
+            <div class=""><b>Volta atual:</b> 5:25:32 </div>
+            <div class=""><b>Última volta:</b> 7:23:95 </div>
+            <div class=""><b>Diferença:</b> 4:24:22 </div>
+            <div class=""><b>Volta mais rápida:</b> 7:23:95</div>
+          </div>
+      </div>
+
       <div class="barra-titulo">
           <div class="barra-titulo-interno">
             <div id="logo-unifei"><img src="./images/unifei.png"></div>
-            <div class="">Dashboard</div>
+            <div class="">Dashboard Geral</div>
             <div id="logo-cheetah"><img src="./images/logo.png"></div>
           </div>
       </div>
@@ -22,45 +35,12 @@
           <div class="velocimetro-canvas">
             <canvas id="velocimetro" class="canvas"></canvas>
           </div>
-        </div>
-
-        <div id="bloco1" class="bloco">
-            <span class="titulo-bloco">RPM rodas</span>
-            <div class="grid-interno-rpm">
-              <canvas id="indicador1" class="indicador"></canvas>
-              <span id="rpm-roda1" >1250 RPM</span>
-              <canvas id="indicador2" class="indicador"></canvas>
-              <span id="rpm-roda2" >640 RPM</span>
-              <canvas id="indicador3" class="indicador"></canvas>
-              <span id="rpm-roda3" >13 RPM</span>
-              <canvas id="indicador4" class="indicador"></canvas>
-              <span id="rpm-roda4" >1252 RPM</span>
-            </div>
-        </div>
-
-        <div id="bloco2" class="bloco">
-          <span class="titulo-bloco">Temperatura Freios</span>
-          <div class="grid-interno-temperatura">
-            <canvas id="indicador5" class="indicador-temperatura"></canvas>
-            <canvas id="indicador6" class="indicador-temperatura"></canvas>
-            <canvas id="indicador7" class="indicador-temperatura"></canvas>
-            <canvas id="indicador8" class="indicador-temperatura"></canvas>
-          </div>
-          <span id="temperatura-freio1" >70 º</span>
-          <span id="temperatura-freio2" >71 º</span>
-          <span id="temperatura-freio3" >81 º</span>
-          <span id="temperatura-freio4" >99 º</span>
-        </div>
-
-        <div id="bloco3" class="bloco">
-          <span class="titulo-bloco">Volante</span>
-          <div class="volante-grid">
-            <div id="volante"></div>
+          <div id="velocimetro-texto">
+            81
           </div>
         </div>
 
         <div id="bloco4" class="bloco">
-          <span class="titulo-bloco">Bateria HV</span>
           <div class="texto-direita-bloco">
             <div class="bateria-alta">
               <div id="bateria-alta-img"><img src="./images/bateria.svg"></div>
@@ -73,69 +53,7 @@
           </div>
         </div>
 
-        <div id="bloco5" class="bloco">
-          <span class="titulo-bloco">Bateria LV</span>
-          <div class="texto-direita-bloco">
-            <div class="bateria-alta">
-              <div id="bateria-alta-img"><img src="./images/bateria.svg"></div>
-              <div id="bateria-baixa-interior"></div>
-            </div>
-            <span id="bateria-baixa-soc"><b>SOC:</b> <br> 35 %</span>
-            <span id="bateria-baixa-tensao"><b>Tensão:</b> <br>60V</span>
-            <span id="bateria-baixa-amp"><b>Carga:</b> <br> 32Ah</span>
-            <span id="bateria-baixa-corrente"><b>Corrente:</b> <br> -12A</span>
-          </div>
-        </div>
-
-        <div id="bloco6" class="bloco">
-            <span class="titulo-bloco">Estado Bateria HV</span>
-            <div class="temperatura-de-dois">
-              <canvas id="indicador9" class="indicador-temperatura"></canvas>
-              <canvas id="indicador10" class="indicador-temperatura"></canvas>
-              <span id="nan"></span>
-              <span id="nan"></span>
-              <span id="nan"></span>
-              <span id="nan"></span>
-              <span id="temperatura-bateria-baixa"><b>Min:</b> 70 º</span>
-              <span id="temperatura-bateria-alta"><b>Máx:</b> 50 º</span>
-              <span id="celula-tensao-baixa"><b>Min:</b> 1,2V</span>
-              <span id="celula-tensao-alta"><b>Máx:</b> 3,4V</span>
-              <span id="celula-resistencia-baixa"><b>Máx:</b> 2 &Omega;</span>
-              <span id="celula-resistencia-alta"><b>Máx:</b> 1 &Omega;</span>
-            </div>
-        </div>
-
-        <div id="bloco7" class="bloco">
-            <span class="titulo-bloco">Inversor</span>
-            <div class="temperatura-de-dois">
-              <canvas id="indicador11" class="indicador-temperatura"></canvas>
-              <canvas id="indicador12" class="indicador-temperatura"></canvas>
-              <span id="nan"></span>
-              <span id="nan"></span>
-              <span id="nan"></span>
-              <span id="nan"></span>
-              <span id="inversor-fet1"><b>FET1:</b> 70 º</span>
-              <span id="inversor-fet2"><b>FET2:</b> 50 º</span>
-              <span id="inversor-torque"><b>Torq:</b> 30Nm</span>
-              <span id="inversor-rpm"><b>RPM:</b> 1200</span>
-              <span id="inversor-tensao"><b>Out.</b> 20 VAC</span>
-              <span id="inversor-freq"><b>Freq.</b> 120</span>
-            </div>
-        </div>
-
-        <div id="bloco8" class="bloco">
-          <span class="titulo-bloco">Aceleração</span>
-          <div class="aceleracao-bloco">
-            <div id="aceleracao-img"></div>
-            <div class="aceleracao-texto">
-              <span id="aceleracao-x"><b>AccX:</b><br> 0,0 m/s²</span>
-              <span id="aceleracao-y"><b>AccY:</b><br> 0,0 m/s²</span>
-            </div>
-          </div>
-        </div>
-
         <div id="bloco9" class="bloco">
-            <span class="titulo-bloco">Estado do carro</span>
             <div class="estados">
               <span id="nan"></span>
               <span id="nan"></span>

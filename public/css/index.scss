@@ -1,33 +1,22 @@
+$cheetah-gradient: linear-gradient(0deg, rgba(252,41,96,1) 0%, rgba(255,84,44,1) 100%);
 $cor-fundo: #0F0E1E;
-$cor-hue: 200;
+$cor-hue: 35;
 $cor-destaque: rgba($cor-hue, $cor-hue, $cor-hue, .00);
 $cor-destaque2: rgba($cor-hue, $cor-hue, $cor-hue, .00);
-$cor-grid: rgba($cor-hue, $cor-hue, $cor-hue, .25);
+$cor-grid: rgba($cor-hue, $cor-hue, $cor-hue, .85);
 $cor-texto: #FFFFFF;
-$cor-ligado: #00aa00;
-$cor-desligado: #aa0000;
+$cor-ligado: $cheetah-gradient;
+$cor-desligado: #444;
 $raio-borda: 10px;
+$blur: 0px;
+$alt-blur: 1px;
 
-$posicao-rpm-x: 1;
-$posicao-rpm-y: 1;
-$posicao-freios-x: 1;
-$posicao-freios-y: 2;
 $posicao-bhv-x: 1;
-$posicao-bhv-y: 4;
-$posicao-blv-x: 1;
-$posicao-blv-y: 5;
-$posicao-ebhv-x: 2;
-$posicao-ebhv-y: 5;
-$posicao-volante-x: 2;
-$posicao-volante-y: 4;
-$posicao-acel-x: 2;
-$posicao-acel-y: 2;
-$posicao-estado-x: 2;
+$posicao-bhv-y: 1;
+$posicao-estado-x: 1;
 $posicao-estado-y: 3;
 $posicao-velocimetro-x: 1;
-$posicao-velocimetro-y: 3;
-$posicao-inversor-x: 2;
-$posicao-inversor-y: 1;
+$posicao-velocimetro-y: 2;
 
 @font-face
 {
@@ -61,7 +50,8 @@ body
 {
   //background-color: $cor-fundo;
   background-attachment: fixed;
-  background: url("../images/background.png");
+  background: url("../images/skyline.jpg");
+  //background-image: linear-gradient( 111.2deg,  rgba(232,5,5,1) 1.7%, rgba(245,49,191,1) 98.7% );
   background-repeat: no-repeat;
   background-size: 100%;
 
@@ -73,21 +63,24 @@ body
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   grid-template-columns: 70px auto 70px;
-  grid-template-rows: 60px;
+  //grid-template-rows: 60px;
   grid-auto-rows: auto;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur($alt-blur);
 }
 
 .grid
 {
+  backdrop-filter: blur($blur);
   background: $cor-destaque;
   grid-column: 2;
   grid-row: 2;
   display: grid;
   grid-column-gap: 20px;
   grid-row-gap: 30px;
-  grid-template-columns: 4fr 4fr 280px 4fr 4fr;
-  grid-auto-rows: 230px;
+  grid-template-columns:  4fr 450px  4fr;
+  grid-auto-rows: auto;
+  justify-items: center;
+  align-items: center;
 }
 
 .grid-principal > div
@@ -116,7 +109,7 @@ body
 
 .velocimetro-canvas canvas
 {
-  height: 220px;
+  height: 527px;
   width: 100%;
 }
 
@@ -126,112 +119,34 @@ body
   background-image: url('../images/vel_arthur.png');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: 0px 60px;
+}
+
+#velocimetro-texto
+{
+  font-family: Montserrat;
+  color: #fff;
+  font-weight: bold;
+  font-size: 33px;
+  position: relative;
+  bottom: 140px;
+  left: 200px;
 }
 
 .bloco
 {
   background: linear-gradient(0deg, $cor-destaque 85%, $cor-destaque2 15%) !important;
-  min-width: 180px;
-  max-width: 300px;
+  //min-width: 180px;
+  //max-width: 300px;
   font-family: Montserrat;
   color: #fff;
   font-weight: regular;
   font-size: 16px;
 }
 
-.grid-interno-rpm
-{
-  display: grid;
-  grid-gap: 0px;
-  grid-template-columns: 50px 80px;
-  grid-auto-rows: 50px;
-}
-
-.grid-interno-rpm span
-{
-  text-align: right;
-  position: relative;
-  top: 20px;
-}
-
-.grid-interno-temperatura
-{
-  display: grid;
-  grid-gap: 0px;
-  grid-template-columns: 100px 100px;
-  grid-auto-rows: 100px;
-}
-
 .titulo-bloco
 {
   font-weight: bold;
-}
-
-#bloco1
-{
-  grid-column: $posicao-rpm-y;
-  grid-row: $posicao-rpm-x;
-}
-
-#bloco2
-{
-  grid-column: $posicao-freios-y;
-  grid-row: $posicao-freios-x;
-}
-
-.indicador
-{
-  height: 40px !important;
-  width: 40px !important;
-}
-
-.indicador-temperatura
-{
-  height: 70px !important;
-  width: 70px !important;
-}
-
-
-#temperatura-freio1
-{
-  position: relative;
-  bottom: 130px;
-  left: 27px;
-}
-
-#temperatura-freio2
-{
-  position: relative;
-  bottom: 130px;
-  left: 95px;
-}
-
-#temperatura-freio3
-{
-  position: relative;
-  bottom: 30px;
-  left: -38px;
-}
-
-#temperatura-freio4
-{
-  position: relative;
-  bottom: 30px;
-  left: 30px;
-}
-
-
-.volante-grid
-{
-  display:flex;
-}
-
-#volante
-{
-  background: url("../images/wheel.png") no-repeat center center;
-  height: 200px;
-  width: 200px;
 }
 
 .texto-direita-bloco
@@ -255,7 +170,7 @@ body
   bottom: 55px;
   height: 50px;
   width: 43px;
-  background-color: #009900;
+  background: $cheetah-gradient;
   z-index: 10;
 }
 
@@ -271,83 +186,6 @@ body
   left: -20px;
   height: 140px !important;
   z-index: 20;
-}
-
-#bloco5
-{
-  grid-column: $posicao-blv-y;
-  grid-row: $posicao-blv-x;
-}
-
-#bloco6
-{
-  grid-column: $posicao-ebhv-y;
-  grid-row: $posicao-ebhv-x;
-}
-
-#bateria-baixa-interior
-{
-  position: relative;
-  left: 8px;
-  bottom: 75px;
-  height: 70px;
-  width: 43px;
-  background-color: #009900;
-  z-index: 10;
-}
-
-.temperatura-de-dois
-{
-  display: grid;
-  grid-gap: 0px;
-  grid-template-columns: 100px 100px;
-  grid-auto-rows: 32px;
-}
-
-#bloco7
-{
-  grid-row: $posicao-inversor-x;
-  grid-column: $posicao-inversor-y;
-}
-
-#bloco8
-{
-  grid-row: $posicao-acel-x;
-  grid-column: $posicao-acel-y;
-}
-
-.aceleracao-bloco
-{
-  display: flex;
-  flex-direction: column;
-}
-
-.aceleracao-bloco span
-{
-  text-align: center;
-}
-
-#aceleracao-img
-{
-  background: url("../images/acel.png") no-repeat center center;
-  height: 200px;
-  width: 200px;
-  position: relative;
-  right: 10px;
-  bottom: 10px;
-}
-
-.aceleracao-texto
-{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: relative;
-  bottom: 36px;
-}
-
-#aceleracao-x , #aceleracao-y
-{
-
 }
 
 #bloco9
@@ -375,37 +213,36 @@ body
 
 #estado-air
 {
-  background-color: $cor-ligado;
+  background: $cor-ligado;
 }
 
 #estado-imd
 {
-  background-color:  $cor-ligado;
+  background:  $cor-ligado;
 }
 
 #estado-bspd
 {
-  background-color:  $cor-desligado;
+  background:  $cor-desligado;
 }
 
 #estado-bms
 {
-  background-color:  $cor-desligado;
+  background:  $cor-desligado;
 }
 
 #estado-selftest
 {
-  background-color:  $cor-ligado;
+  background:  $cor-ligado;
 }
 
 .barra-lateral
 {
+  backdrop-filter: blur($blur);
   border-radius: 0 $raio-borda $raio-borda 0 !important;
   grid-column: 1;
   grid-row: 2;
   background: $cor-destaque;
-  //background: $cor-destaque !important;
-  //border-radius: 0px !important;
 }
 
 $p-barra: 50%;
@@ -415,7 +252,7 @@ $p-barra: 50%;
   display: flex;
   flex-direction: column;
   align-self: center;
-  padding: 10px 0px $p-barra 0px ;
+  padding: 60px 0px $p-barra 0px ;
 }
 
 .barra-lateral-flexbox div
@@ -440,14 +277,29 @@ $p-barra: 50%;
 
 .barra-lateral2
 {
+  backdrop-filter: blur($blur);
   border-radius: $raio-borda 0 0 $raio-borda !important;
   background: $cor-destaque;
   grid-column: 3;
-  grid-row: 2;
+  grid-row: 2 ;
+}
+
+.barra-titulo2
+{
+  backdrop-filter: blur($blur);
+  border-radius:  $raio-borda $raio-borda 0 0 !important;
+  font-family: Montserrat;
+  font-weight: regular;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  grid-column: 1 / span 3;
+  grid-row: 3;
 }
 
 .barra-titulo
 {
+  backdrop-filter: blur($blur);
   border-radius: 0 0 $raio-borda $raio-borda !important;
   font-family: Montserrat;
   font-weight: bold;
@@ -462,7 +314,15 @@ $p-barra: 50%;
 {
   display: grid;
   grid-row-gap: 0px;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.barra-titulo-interno2
+{
+  display: grid;
+  grid-row-gap: 0px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   align-items: center;
 }
 
@@ -474,12 +334,6 @@ $p-barra: 50%;
 .barra-titulo-interno div img
 {
   height: 50px;
-}
-
-#bloco3
-{
-  grid-row: $posicao-volante-x;
-  grid-column: $posicao-volante-y;
 }
 
 #bloco4

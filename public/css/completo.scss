@@ -1,0 +1,489 @@
+$cor-fundo: #0F0E1E;
+$cor-hue: 55;
+$cor-destaque: rgba($cor-hue, $cor-hue, $cor-hue, .00);
+$cor-destaque2: rgba($cor-hue, $cor-hue, $cor-hue, .00);
+$cor-grid: rgba($cor-hue, $cor-hue, $cor-hue, .45);
+$cor-texto: #FFFFFF;
+$cor-ligado: #00aa00;
+$cor-desligado: #aa0000;
+$raio-borda: 10px;
+
+$posicao-rpm-x: 1;
+$posicao-rpm-y: 1;
+$posicao-freios-x: 1;
+$posicao-freios-y: 2;
+$posicao-bhv-x: 1;
+$posicao-bhv-y: 4;
+$posicao-blv-x: 1;
+$posicao-blv-y: 5;
+$posicao-ebhv-x: 2;
+$posicao-ebhv-y: 5;
+$posicao-volante-x: 2;
+$posicao-volante-y: 4;
+$posicao-acel-x: 2;
+$posicao-acel-y: 2;
+$posicao-estado-x: 2;
+$posicao-estado-y: 3;
+$posicao-velocimetro-x: 1;
+$posicao-velocimetro-y: 3;
+$posicao-inversor-x: 2;
+$posicao-inversor-y: 1;
+
+@font-face
+{
+  font-family: digital;
+  src: url(../fonts/digital-readout/TrueType/SFDigitalReadout-Medium.ttf);
+}
+
+@font-face
+{
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+padding: 0;
+}
+
+body
+{
+  //background-color: $cor-fundo;
+  background-attachment: fixed;
+  background: url("../images/background.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+
+.grid-principal
+{
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-columns: 70px auto 70px;
+  grid-template-rows: 60px;
+  grid-auto-rows: auto;
+  backdrop-filter: blur(10px);
+}
+
+.grid
+{
+  background: $cor-destaque;
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+  grid-template-columns: 4fr 4fr 280px 4fr 4fr;
+  grid-auto-rows: 230px;
+}
+
+.grid-principal > div
+{
+  background: $cor-grid;
+  padding: 10px;
+  padding-top: 5px;
+  border-radius: $raio-borda;
+}
+
+.grid > div
+{
+  background: $cor-destaque;
+  padding: 10px;
+  padding-top: 5px;
+  border-radius: $raio-borda;
+}
+
+
+
+.velocimetro-class
+{
+  grid-column: $posicao-velocimetro-y;
+  grid-row: $posicao-velocimetro-x;
+}
+
+.velocimetro-canvas canvas
+{
+  height: 220px;
+  width: 100%;
+}
+
+#velocimetro
+{
+  padding: 0px !important;
+  background-image: url('../images/vel_arthur.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.bloco
+{
+  background: linear-gradient(0deg, $cor-destaque 85%, $cor-destaque2 15%) !important;
+  min-width: 180px;
+  max-width: 300px;
+  font-family: Montserrat;
+  color: #fff;
+  font-weight: regular;
+  font-size: 16px;
+}
+
+.grid-interno-rpm
+{
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: 50px 80px;
+  grid-auto-rows: 50px;
+}
+
+.grid-interno-rpm span
+{
+  text-align: right;
+  position: relative;
+  top: 20px;
+}
+
+.grid-interno-temperatura
+{
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: 100px 100px;
+  grid-auto-rows: 100px;
+}
+
+.titulo-bloco
+{
+  font-weight: bold;
+}
+
+#bloco1
+{
+  grid-column: $posicao-rpm-y;
+  grid-row: $posicao-rpm-x;
+}
+
+#bloco2
+{
+  grid-column: $posicao-freios-y;
+  grid-row: $posicao-freios-x;
+}
+
+.indicador
+{
+  height: 40px !important;
+  width: 40px !important;
+}
+
+.indicador-temperatura
+{
+  height: 70px !important;
+  width: 70px !important;
+}
+
+
+#temperatura-freio1
+{
+  position: relative;
+  bottom: 130px;
+  left: 27px;
+}
+
+#temperatura-freio2
+{
+  position: relative;
+  bottom: 130px;
+  left: 95px;
+}
+
+#temperatura-freio3
+{
+  position: relative;
+  bottom: 30px;
+  left: -38px;
+}
+
+#temperatura-freio4
+{
+  position: relative;
+  bottom: 30px;
+  left: 30px;
+}
+
+
+.volante-grid
+{
+  display:flex;
+}
+
+#volante
+{
+  background: url("../images/wheel.png") no-repeat center center;
+  height: 200px;
+  width: 200px;
+}
+
+.texto-direita-bloco
+{
+  padding-top: 20px;
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: 80px 100px;
+  grid-auto-rows: 40px;
+}
+
+.bateria-alta
+{
+    grid-row: 1 / span 4;
+}
+
+#bateria-alta-interior
+{
+  position: relative;
+  left: 8px;
+  bottom: 55px;
+  height: 50px;
+  width: 43px;
+  background-color: #009900;
+  z-index: 10;
+}
+
+#bateria-alta
+{
+  grid-row: 1 / span 4;
+}
+
+#bateria-alta-img img
+{
+  position: relative;
+  top: 10px;
+  left: -20px;
+  height: 140px !important;
+  z-index: 20;
+}
+
+#bloco5
+{
+  grid-column: $posicao-blv-y;
+  grid-row: $posicao-blv-x;
+}
+
+#bloco6
+{
+  grid-column: $posicao-ebhv-y;
+  grid-row: $posicao-ebhv-x;
+}
+
+#bateria-baixa-interior
+{
+  position: relative;
+  left: 8px;
+  bottom: 75px;
+  height: 70px;
+  width: 43px;
+  background-color: #009900;
+  z-index: 10;
+}
+
+.temperatura-de-dois
+{
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: 100px 100px;
+  grid-auto-rows: 32px;
+}
+
+#bloco7
+{
+  grid-row: $posicao-inversor-x;
+  grid-column: $posicao-inversor-y;
+}
+
+#bloco8
+{
+  grid-row: $posicao-acel-x;
+  grid-column: $posicao-acel-y;
+}
+
+.aceleracao-bloco
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.aceleracao-bloco span
+{
+  text-align: center;
+}
+
+#aceleracao-img
+{
+  background: url("../images/acel.png") no-repeat center center;
+  height: 200px;
+  width: 200px;
+  position: relative;
+  right: 10px;
+  bottom: 10px;
+}
+
+.aceleracao-texto
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  bottom: 36px;
+}
+
+#aceleracao-x , #aceleracao-y
+{
+
+}
+
+#bloco9
+{
+  grid-row: $posicao-estado-x;
+  grid-column: $posicao-estado-y;
+}
+
+.estados
+{
+  display: grid;
+  grid-row-gap: 10px;
+  grid-template-columns: 167px 50px;
+  grid-auto-rows: 20px;
+}
+
+.estados div
+{
+  font-weight: bold;
+  text-align: center;
+  width: 60px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+#estado-air
+{
+  background-color: $cor-ligado;
+}
+
+#estado-imd
+{
+  background-color:  $cor-ligado;
+}
+
+#estado-bspd
+{
+  background-color:  $cor-desligado;
+}
+
+#estado-bms
+{
+  background-color:  $cor-desligado;
+}
+
+#estado-selftest
+{
+  background-color:  $cor-ligado;
+}
+
+.barra-lateral
+{
+  border-radius: 0 $raio-borda $raio-borda 0 !important;
+  grid-column: 1;
+  grid-row: 2;
+  background: $cor-destaque;
+  //background: $cor-destaque !important;
+  //border-radius: 0px !important;
+}
+
+$p-barra: 50%;
+
+.barra-lateral-flexbox
+{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding: 10px 0px $p-barra 0px ;
+}
+
+.barra-lateral-flexbox div
+{
+  margin: $p-barra 0px $p-barra 0px;
+  font-family: Montserrat;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+}
+
+.barra-lateral-flexbox div img
+{
+  width: 50px;
+  height: auto;
+}
+
+.barra-lateral-interior div
+{
+  margin: 5px !important;
+}
+
+.barra-lateral2
+{
+  border-radius: $raio-borda 0 0 $raio-borda !important;
+  background: $cor-destaque;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.barra-titulo
+{
+  border-radius: 0 0 $raio-borda $raio-borda !important;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  color: #fff;
+  grid-column: 1 / span 3;
+  grid-row: 1;
+}
+
+.barra-titulo-interno
+{
+  display: grid;
+  grid-row-gap: 0px;
+  grid-template-columns: 1fr 3fr 1fr;
+  align-items: center;
+}
+
+.barra-titulo-interno div
+{
+    margin: 0px 20px;
+}
+
+.barra-titulo-interno div img
+{
+  height: 50px;
+}
+
+#bloco3
+{
+  grid-row: $posicao-volante-x;
+  grid-column: $posicao-volante-y;
+}
+
+#bloco4
+{
+  grid-row: $posicao-bhv-x;
+  grid-column: $posicao-bhv-y;
+}

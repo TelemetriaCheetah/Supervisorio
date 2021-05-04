@@ -48,38 +48,7 @@
           <canvas id="velocimetro" class="canvas"></canvas>
         </div>
       </div>
-      <div id="bloco1" class="bloco">
-          <span class="titulo-bloco">RPM rodas</span>
-          <div class="grid-interno-rpm">
-            <canvas id="indicador1" class="indicador"></canvas>
-            <span id="rpm-roda1" >1250 RPM</span>
-            <canvas id="indicador2" class="indicador"></canvas>
-            <span id="rpm-roda2" >640 RPM</span>
-            <canvas id="indicador3" class="indicador"></canvas>
-            <span id="rpm-roda3" >13 RPM</span>
-            <canvas id="indicador4" class="indicador"></canvas>
-            <span id="rpm-roda4" >1252 RPM</span>
-          </div>
-      </div>
-      <div id="bloco2" class="bloco">
-        <span class="titulo-bloco">Temperatura Freios</span>
-        <div class="grid-interno-temperatura">
-          <canvas id="indicador5" class="indicador-temperatura"></canvas>
-          <canvas id="indicador6" class="indicador-temperatura"></canvas>
-          <canvas id="indicador7" class="indicador-temperatura"></canvas>
-          <canvas id="indicador8" class="indicador-temperatura"></canvas>
-        </div>
-        <span id="temperatura-freio1" >70 º</span>
-        <span id="temperatura-freio2" >71 º</span>
-        <span id="temperatura-freio3" >81 º</span>
-        <span id="temperatura-freio4" >99 º</span>
-      </div>
-      <div id="bloco3" class="bloco">
-        <span class="titulo-bloco">Volante</span>
-        <div class="volante-grid">
-          <div id="volante"></div>
-        </div>
-      </div>
+
       <div id="bloco4" class="bloco">
         <span class="titulo-bloco">Bateria HV</span>
         <div class="texto-direita-bloco">
@@ -91,20 +60,6 @@
           <span id="bateria-alta-tensao"><b>Tensão:</b> <br>60V</span>
           <span id="bateria-alta-amp"><b>Carga:</b> <br> 32Ah</span>
           <span id="bateria-alta-corrente"><b>Corrente:</b> <br> -12A</span>
-        </div>
-      </div>
-
-      <div id="bloco5" class="bloco">
-        <span class="titulo-bloco">Bateria LV</span>
-        <div class="texto-direita-bloco">
-          <div class="bateria-alta">
-            <div id="bateria-alta-img"><img src="./images/bateria.svg"></div>
-            <div id="bateria-baixa-interior"></div>
-          </div>
-          <span id="bateria-baixa-soc"><b>SOC:</b> <br> 35 %</span>
-          <span id="bateria-baixa-tensao"><b>Tensão:</b> <br>60V</span>
-          <span id="bateria-baixa-amp"><b>Carga:</b> <br> 32Ah</span>
-          <span id="bateria-baixa-corrente"><b>Corrente:</b> <br> -12A</span>
         </div>
       </div>
 
@@ -125,35 +80,6 @@
             <span id="celula-resistencia-alta"><b>Máx:</b> 1 &Omega;</span>
           </div>
       </div>
-
-      <div id="bloco7" class="bloco">
-          <span class="titulo-bloco">Inversor</span>
-          <div class="temperatura-de-dois">
-            <canvas id="indicador11" class="indicador-temperatura"></canvas>
-            <canvas id="indicador12" class="indicador-temperatura"></canvas>
-            <span id="nan"></span>
-            <span id="nan"></span>
-            <span id="nan"></span>
-            <span id="nan"></span>
-            <span id="inversor-fet1"><b>FET1:</b> 70 º</span>
-            <span id="inversor-fet2"><b>FET2:</b> 50 º</span>
-            <span id="inversor-torque"><b>Torq:</b> 30Nm</span>
-            <span id="inversor-rpm"><b>RPM:</b> 1200</span>
-            <span id="inversor-tensao"><b>Out.</b> 20 VAC</span>
-            <span id="inversor-freq"><b>Freq.</b> 120</span>
-          </div>
-    </div>
-
-    <div id="bloco8" class="bloco">
-        <span class="titulo-bloco">Aceleração</span>
-        <div class="aceleracao-bloco">
-          <div id="aceleracao-img"></div>
-          <div class="aceleracao-texto">
-            <span id="aceleracao-x"><b>AccX:</b><br> 0,0 m/s²</span>
-            <span id="aceleracao-y"><b>AccY:</b><br> 0,0 m/s²</span>
-          </div>
-        </div>
-    </div>
 
     <div id="bloco9" class="bloco">
         <span class="titulo-bloco">Estado do carro</span>
