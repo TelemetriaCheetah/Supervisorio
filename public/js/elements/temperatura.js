@@ -17,8 +17,8 @@ class Temperatura
       staticZones:
       [
          {strokeStyle: "#F03E3E", min: 0, max: 40}, // Red from 100 to 130
-         {strokeStyle: "#FFDD00", min: 40, max: 150}, // Yellow
-         {strokeStyle: "#30B32D", min: 150, max: 220}, // Green
+         {strokeStyle: "#FFDD00", min: 40, max: 50}, // Yellow
+         {strokeStyle: "#30B32D", min: 50, max: 220}, // Green
          {strokeStyle: "#FFDD00", min: 220, max: 260}, // Yellow
          {strokeStyle: "#F03E3E", min: 260, max: 300}  // Red
       ],

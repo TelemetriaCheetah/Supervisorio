@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Powertrain</title>
+    <link rel="stylesheet" href="css/inversor.min.css">
+  </head>
+  <body>
+    <div class="grid-principal">
+
+      <div class="barra-titulo2">
+          <div class="barra-titulo-interno2">
+            <div class=""><b>MySQL:</b> Conectado</div>
+            <div class=""><b>ID Teste:</b> 23</div>
+            <div class=""><b>Usuário:</b> Caio Tácito</div>
+            <div class=""><b>TS:</b> 2021-04-27-23-37-42</div>
+            <div class=""><b>Volta atual:</b> 5:25:32 </div>
+            <div class=""><b>Última volta:</b> 7:23:95 </div>
+            <div class=""><b>Diferença:</b> 4:24:22 </div>
+            <div class=""><b>Volta mais rápida:</b> 7:23:95</div>
+          </div>
+      </div>
+
+      <div class="barra-titulo">
+          <div class="barra-titulo-interno">
+            <div id="logo-unifei"><img src="./images/unifei.png"></div>
+            <div class="">Powertrain</div>
+            <div id="logo-cheetah"><img src="./images/logo.png"></div>
+          </div>
+      </div>
+
+      <div class="grid">
+        <div id="bloco-bateria-alta" class="bloco">
+          <span class="titulo-bloco">Bateria HV</span>
+          <div class="texto-direita-bloco">
+            <div class="bateria-alta">
+              <div id="bateria-alta-img"><img src="./images/bateria.svg"></div>
+              <div id="bateria-alta-interior"></div>
+            </div>
+            <span id="bateria-alta-soc"><b>SOC:</b> <br> 35 %</span>
+            <span id="bateria-alta-tensao"><b>Tensão:</b> <br>60V</span>
+            <span id="bateria-alta-amp"><b>Carga:</b> <br> 32Ah</span>
+            <span id="bateria-alta-corrente"><b>Corrente:</b> <br> -12A</span>
+          </div>
+        </div>
+
+        <div id="bloco-bateria-baixa" class="bloco">
+          <span class="titulo-bloco">Bateria LV</span>
+          <div class="texto-direita-bloco">
+            <div class="bateria-baixa">
+              <div id="bateria-baixa-img"><img src="./images/bateria.svg"></div>
+              <div id="bateria-baixa-interior"></div>
+            </div>
+            <span id="bateria-baixa-soc"><b>SOC:</b> <br> 35 %</span>
+            <span id="bateria-baixa-tensao"><b>Tensão:</b> <br>60V</span>
+            <span id="bateria-baixa-amp"><b>Carga:</b> <br> 32Ah</span>
+            <span id="bateria-baixa-corrente"><b>Corrente:</b> <br> -12A</span>
+          </div>
+        </div>
+
+        <div id="bloco-estado-bateriahv" class="bloco">
+          <span class="titulo-bloco">Estado Bateria HV</span>
+          <div class="temperatura-de-dois">
+            <canvas id="indicador9" class="indicador-temperatura"></canvas>
+            <canvas id="indicador10" class="indicador-temperatura"></canvas>
+            <span id="nan"></span>
+            <span id="nan"></span>
+            <span id="nan"></span>
+            <span id="nan"></span>
+            <span id="temperatura-bateriahv-baixa"><b>Min:</b> 70 º</span>
+            <span id="temperatura-bateriahv-alta"><b>Máx:</b> 50 º</span>
+            <span id="celula-tensaohv-baixa"><b>Min:</b> 1,2V</span>
+            <span id="celula-tensaohv-alta"><b>Máx:</b> 3,4V</span>
+            <span id="celula-resistenciahv-baixa"><b>Máx:</b> 2 &Omega;</span>
+            <span id="celula-resistenciahv-alta"><b>Máx:</b> 1 &Omega;</span>
+          </div>
+        </div>
+
+        <div id="bloco-estado-baterialv" class="bloco">
+          <span class="titulo-bloco">Estado Bateria LV</span>
+          <div class="temperatura-de-dois">
+            <canvas id="indicador11" class="indicador-temperatura"></canvas>
+            <canvas id="indicador12" class="indicador-temperatura"></canvas>
+            <span id="nan"></span>
+            <span id="nan"></span>
+            <span id="nan"></span>
+            <span id="nan"></span>
+            <span id="temperatura-baterialv-baixa"><b>Min:</b> 70 º</span>
+            <span id="temperatura-baterialv-alta"><b>Máx:</b> 50 º</span>
+            <span id="celula-tensaolv-baixa"><b>Min:</b> 1,2V</span>
+            <span id="celula-tensaolv-alta"><b>Máx:</b> 3,4V</span>
+            <span id="celula-resistencialv-baixa"><b>Máx:</b> 2 &Omega;</span>
+            <span id="celula-resistencialv-alta"><b>Máx:</b> 1 &Omega;</span>
+          </div>
+      </div>
+
+      <div id="bloco-tps" class="bloco">
+        <span class="titulo-bloco">Pedais</span>
+        <div id="tps-interior">
+          <div class="barra-tps">
+            <div class="barra-tps-interior" id="tamanho-tps1"></div>
+            <div class="barra-tps-texto"><b>TPS 1: </b> 20 %</div>
+
+          </div>
+          <div class="barra-tps">
+            <div class="barra-tps-interior" id="tamanho-tps2"></div>
+            <div class="barra-tps-texto"><b>TPS 2: </b>30 %</div>
+
+          </div>
+          <div class="barra-tps">
+            <div class="barra-tps-interior" id="tamanho-tps3"></div>
+            <div class="barra-tps-texto"><b>BSE: </b>80 %</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="bloco-inversor" class="bloco">
+        <span class="titulo-bloco">Inversor</span>
+        <div class="temperatura-de-dois">
+          <canvas id="indicador7" class="indicador-temperatura"></canvas>
+          <canvas id="indicador8" class="indicador-temperatura"></canvas>
+          <span id="nan"></span>
+          <span id="nan"></span>
+          <span id="nan"></span>
+          <span id="nan"></span>
+          <span id="inversor-fet1"><b>FET1:</b> 70 º</span>
+          <span id="inversor-fet2"><b>FET2:</b> 50 º</span>
+          <span id="inversor-torque"><b>Torq:</b> 30Nm</span>
+          <span id="inversor-rpm"><b>RPM:</b> 1200</span>
+          <span id="inversor-tensao"><b>Out.</b> 20 VAC</span>
+          <span id="inversor-freq"><b>Freq.</b> 120</span>
+        </div>
+      </div>
+
+      <div id="bloco-dados" class="bloco">
+        <span class="titulo-bloco">Dados Gerais</span>
+        <div class="coluna-simples">
+          <span id="dados-alarme"><b>Alarme:</b> </span>
+          <span id="dados-12v"><b>12v BMS:</b> </span>
+          <span id="dados-isolamento"><b>Iso. BMS:</b> </span>
+          <span id="dados-adc"><b>ADC1 BMS:</b> </span>
+          <span id="dados-estado"><b>Inversor:</b></span>
+          <span id="dados-fan"><b>Fan speed:</b></span>
+          <span id="dados-falha1"><b>Falha atual:</b></span>
+          <span id="dados-falha2"><b>Falha ant.:</b></span>
+        </div>
+      </div>
+
+      <div id="grafico1" class="bloco">
+        <span class="titulo-bloco">KWh x tempo</span>
+        <canvas id="myChart" class="grafico"></canvas>
+      </div>
+
+      <div id="grafico2" class="bloco">
+        <span class="titulo-bloco">Tensão x tempo</span>
+        <canvas id="myChart2" class="grafico"></canvas>
+      </div>
+
+      <div id="grafico3" class="bloco">
+        <span class="titulo-bloco">Temp. x tempo</span>
+        <canvas id="myChart3" class="grafico"></canvas>
+      </div>
+
+    </div>
+
+    <div class="barra-lateral">
+      <div class="barra-lateral-flexbox">
+        <div id="barra-dashboard"><a href="index.html"><img src="./images/dash-icon.png"></a></div>
+        <div id="barra-carro"><a href="inversor.html"><img src="./images/car-icon-select.png"></a></div>
+        <div id="barra-bateria"><img src="./images/battery-icon.png"></div>
+        <div id="barra-stats"><img src="./images/stats-icon.png"></div>
+        <div id="barra-config"><img src="./images/config-icon.png"></div>
+      </div>
+    </div>
+
+    <div class="barra-lateral2">
+      <div class="barra-lateral-flexbox">
+        <div class="barra-lateral-interior">
+          <img src="./images/wifi-3-4.png">
+          <div id="barra-rssi" ><b>RSSI:</b> -74dBm</div>
+          <div id="barra-rtt" ><b>RTT:</b> 128ms</div>
+        </div>
+        <div class="barra-lateral-interior">
+          <img src="./images/clock.svg">
+          <div id="barra-uptime" ><b>Uptime:</b> 179s</div>
+        </div>
+        <div class="barra-lateral-interior">
+          <img src="./images/stop-button.png">
+          <div id="barra-stop" ><b>Abrir AIRs</b></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/gauge.min.js"></script>
+    <script src="js/elements/velocimetro.js"></script>
+    <script src="js/elements/painel.js"></script>
+    <script src="js/elements/temperatura.js"></script>
+    <script src="js/inversor.js"></script>
+  </body>
+</html>

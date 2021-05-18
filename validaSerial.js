@@ -8,8 +8,8 @@ console.log("Inicializando servidor de telemetria Cheetah E-racing\nPor favor ag
 const CheetahLinkFormatter = require('./js/CheetahLinkFormatter');
 const CheetahLinkParser = require('./js/CheetahLinkParser');
 const DatabaseHandler = require('./js/DatabaseHandler');
-const ttyPort = "/dev/ttyACM1";
-const port = new serialport(ttyPort,{baudRate:115200});
+const ttyPort = "/dev/ttyACM2";
+const port = new serialport(ttyPort,{baudRate:9600});
 
 console.log("Módulos carregados");
 
