@@ -1,5 +1,236 @@
 {
-  "qtdMedicao":4,
-  "qtdDiscretos":0,
-  "SA1":"velocimetro"
+  "length" : 161,
+  "qtdMedicao":79,
+  "qtdDiscretos":3,
+  "tensao" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "current" : 
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "pressure" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 1000
+  },
+  "wheelSpeed" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 65536,
+    "newMin" : 0,
+    "newMax" : 4000
+  },
+  "wheelTemperature" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 65536,
+    "newMin" : 0,
+    "newMax" : 100
+  },
+  "steeringRotation" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "hdop" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "imuAccel" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "imuAngle" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "imuMag" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "imuTemp" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "bmsCurrent" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "bmsVoltage" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "bmsTemperature" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "bmsSOC" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "bmsFAN" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "bmsVcc" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "bmsIsol" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "bmsADC" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "bmsCapacity" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "bmsResistance" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "inverterRPM" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "inverterCurrent" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "inverterFrequency" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "inverterState" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "inverterVoltage" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "inverterSpeed" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "inverterTorque" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "inverterTemperature" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "csPWM" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "csVoltage" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "csCurrent" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 360
+  },
+  "tps" :
+  {
+    "oldMin" : 0, 
+    "oldMax" : 4096,
+    "newMin" : 0,
+    "newMax" : 100
+  }
 }
