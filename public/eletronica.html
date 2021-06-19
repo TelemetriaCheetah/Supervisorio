@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Eletrônica</title>
+    <link rel="stylesheet" href="css/eletronica.min.css">
+  </head>
+  <body>
+    <div class="grid-principal">
+
+      <div class="barra-titulo2">
+          <div class="barra-titulo-interno2">
+            <div class=""><b>MySQL:</b> Conectado</div>
+            <div class=""><b>ID Teste:</b> 23</div>
+            <div class=""><b>Usuário:</b> Caio Tácito</div>
+            <div class=""><b>TS:</b> 2021-04-27-23-37-42</div>
+            <div class=""><b>Volta atual:</b> 5:25:32 </div>
+            <div class=""><b>Última volta:</b> 7:23:95 </div>
+            <div class=""><b>Diferença:</b> 4:24:22 </div>
+            <div class=""><b>Volta mais rápida:</b> 7:23:95</div>
+          </div>
+      </div>
+
+      <div class="barra-titulo">
+          <div class="barra-titulo-interno">
+            <div id="logo-unifei"><img src="./images/unifei.png"></div>
+            <div class="">Eletrônica e Telemetria</div>
+            <div id="logo-cheetah"><img src="./images/logo.png"></div>
+          </div>
+      </div>
+
+      <div class="grid">
+        <div id="bloco-latches" class="bloco">
+          <span class="titulo-bloco">Circuito de segurança</span>
+          <div class="estados">
+            <span id="nan"></span>
+            <span id="nan"></span>
+            <span>Relés de isolação:</span>
+            <div id="estado-air">ON</div>
+            <span>Latch IMD:</span>
+            <div id="estado-imd">OFF</div>
+            <span>Latch BSPD:</span>
+            <div id="estado-bspd">OFF</div>
+            <span>Latch BMS:</span>
+            <div id="estado-bms">OFF</div>
+            <span>Resultado Self Test:</span>
+            <div id="estado-selftest">PASS</div>
+          </div>
+        </div>
+
+        <div id="bloco-shutdown1" class="bloco">
+          <span class="titulo-bloco">Circuito de desligamento</span>
+          <div class="estados">
+            <span id="nan"></span>
+            <span id="nan"></span>
+            <span>Inertia Switch:</span>
+            <div id="estado-switch">ON</div>
+            <span>BOTS:</span>
+            <div id="estado-bots">ON</div>
+            <span>Botão frontal:</span>
+            <div id="estado-bf">ON</div>
+            <span>Botão esquerdo:</span>
+            <div id="estado-be">OFF</div>
+            <span>Botão direito:</span>
+            <div id="estado-bd">ON</div>
+          </div>
+        </div>
+
+        <div id="bloco-shutdown2" class="bloco">
+          <span class="titulo-bloco">Circuito de desligamento</span>
+          <div class="estados">
+            <span id="nan"></span>
+            <span id="nan"></span>
+            <span>TSMS:</span>
+            <div id="estado-tsms">ON</div>
+            <span>Interlock HVD:</span>
+            <div id="estado-hvd">ON</div>
+            <span>Interlock Bateria:</span>
+            <div id="estado-cs-bateria">OFF</div>
+            <span>BMS:</span>
+            <div id="estado-cs-bms">ON</div>
+            <span>IMD:</span>
+            <div id="estado-cs-imd">ON</div>
+          </div>
+        </div>
+
+        <div id="bloco-seguranca" class="bloco">
+          <span class="titulo-bloco">Circuito de segurança</span>
+          <div class="estados">
+            <span id="nan"></span>
+            <span id="nan"></span>
+            <span>CS Uptime:</span>
+            <div id="estado-uptime">ON</div>
+            <span>Setpoint Hall:</span>
+            <div id="estado-hall">5,02v</div>
+            <span>Setpoint Cebolinha:</span>
+            <div id="estado-cebolinha">5,00v</div>
+            <span>Estado CS:</span>
+            <div id="estado-cs">OK</div>
+            <span>PWM IMD:</span>
+            <div id="estado-pwm-imd">?!?!</div>
+          </div>
+        </div>
+
+        <div id="bloco-telemetria" class="bloco">
+          <span class="titulo-bloco">Telemetria</span>
+          <div class="estados">
+            <span id="nan"></span>
+            <span id="nan"></span>
+            <span>CS:</span>
+            <div id="estado-cs-tele">ON</div>
+            <span>Tele traseira:</span>
+            <div id="estado-tele-traseira">ON</div>
+            <span>Tele frontal:</span>
+            <div id="estado-tele-frontal">ON</div>
+            <span>Display LCD:</span>
+            <div id="estado-display">OFF</div>
+            <span>Placas rodas:</span>
+            <div id="estado-rodas">ALL</div>
+          </div>
+        </div>
+
+        <div id="grafico1" class="bloco">
+          <span class="titulo-bloco">X por Y</span>
+          <canvas id="myChart" class="grafico"></canvas>
+        </div>
+
+        <div id="grafico2" class="bloco">
+          <span class="titulo-bloco">A por B</span>
+          <canvas id="myChart2" class="grafico"></canvas>
+        </div>
+
+        <div id="grafico3" class="bloco">
+          <span class="titulo-bloco">M por N</span>
+          <canvas id="myChart3" class="grafico"></canvas>
+        </div>
+      </div>
+
+    <div class="barra-lateral">
+      <div class="barra-lateral-flexbox">
+        <div id="barra-dashboard"><a href="index.html"><img src="./images/dash-icon.png"></a></div>
+        <div id="barra-carro"><a href="inversor.html"><img src="./images/car-icon.png"></a></div>
+        <div id="barra-bateria"><a href="eletronica.html"><img src="./images/battery-icon-select.png"></a></div>
+        <div id="barra-stats"><img src="./images/stats-icon.png"></div>
+        <div id="barra-config"><img src="./images/config-icon.png"></div>
+      </div>
+    </div>
+
+    <div class="barra-lateral2">
+      <div class="barra-lateral-flexbox">
+        <div class="barra-lateral-interior">
+          <img src="./images/wifi-3-4.png">
+          <div id="barra-rssi" ><b>RSSI:</b> -74dBm</div>
+          <div id="barra-rtt" ><b>RTT:</b> 128ms</div>
+        </div>
+        <div class="barra-lateral-interior">
+          <img src="./images/clock.svg">
+          <div id="barra-uptime" ><b>Uptime:</b> 179s</div>
+        </div>
+        <div class="barra-lateral-interior">
+          <img src="./images/stop-button.png">
+          <div id="barra-stop" ><b>Abrir AIRs</b></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/gauge.min.js"></script>
+    <script src="js/elements/velocimetro.js"></script>
+    <script src="js/elements/painel.js"></script>
+    <script src="js/elements/temperatura.js"></script>
+    <script src="js/eletronica.js"></script>
+  </body>
+</html>
