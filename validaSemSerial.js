@@ -9,16 +9,13 @@ console.log("Inicializando servidor de telemetria Cheetah E-racing\nPor favor ag
 const CheetahLinkFormatter = require('./js/CheetahLinkFormatter');
 const CheetahLinkParser = require('./js/CheetahLinkParser');
 const DatabaseHandler = require('./js/DatabaseHandler');
+const CsvParser = require('./js/CsvParser.js');
 const { parse } = require("path");
-const ttyPort = "/dev/ttyACM1";
-const port = new serialport(ttyPort,{baudRate:115200});
 
 console.log("Módulos carregados");
 
 var config = JSON.parse(fs.readFileSync('./config.json'));
-const parser = port.pipe(new CheetahLinkParser({length: config.length})); //EM BYTES, CONSULTAR DOCUMENTACAO
 const db = new DatabaseHandler();
-var serial = new CheetahLinkFormatter();
 
 
 const httpPort = 2000;
@@ -56,21 +53,101 @@ function convertRange(value, range)
   return Math.floor(((value - range.oldMin) * (range.newMax - range.newMin)) / (range.oldMax - range.oldMin) + range.newMin);
 }
 
+const csv = new CsvParser();
+
+var cont = 0;
 const getApiAndEmit = socket => 
 {
-  let analog = serial.getAnalogArray();
-  let digital = serial.getDigitalArray();
+  let valores = csv.parseCSV();
+  console.log(parseFloat(valores[cont].SA80.replace(/,/, '.')));
+  cont++;
+  if(cont >= 1500)
+    cont = 0;
 
-  var lta = analog[16].toString(16).padStart(4,"0");
-  var ltb = analog[15].toString(16).padStart(4,"0");
-  var latitude = parseInt(lta+ltb , 16).toString();
-  latitude = latitude.substring(0,2) + "." + latitude.substring(2);
-  var lga = analog[18].toString(16).padStart(4,"0");
-  var lgb = analog[17].toString(16).padStart(4,"0");
-  var longitude = parseInt(lga+lgb , 16).toString();
-  longitude = longitude.substring(0,2) + "." + longitude.substring(2);
+  let analog = [];
 
-  let valores = 
+  analog[0] = Math.floor(parseFloat(valores[cont].SA1) * 40.96);
+  analog[1] = Math.floor(parseFloat(valores[cont].SA1) * 40.96);
+  analog[2] = Math.floor(parseFloat(valores[cont].SA4) * 9.54);
+  analog[3] = Math.floor(parseFloat(valores[cont].SA5) * 9.54);
+  analog[4] = Math.floor(parseFloat(valores[cont].SA6) * 9.54);
+  analog[5] = Math.floor(parseFloat(valores[cont].SA7) * 9.54);
+  analog[6] = Math.floor(parseFloat(valores[cont].SA8) * 10);
+  analog[7] = Math.floor(parseFloat(valores[cont].SA8) * 10);
+  analog[8] = Math.floor(parseFloat(valores[cont].SA10) * 10);
+  analog[9] = Math.floor(parseFloat(valores[cont].SA10) * 10);
+  analog[10] = Math.floor(parseFloat(valores[cont].SA12) * 10);
+  analog[11] = Math.floor(parseFloat(valores[cont].SA12) * 10);
+  analog[12] = Math.floor(parseFloat(valores[cont].SA14) * 10);
+  analog[13] = Math.floor(parseFloat(valores[cont].SA14) * 10);
+  analog[14] = Math.floor(parseFloat(valores[cont].SA16));
+  analog[15] = Math.floor(0);
+  analog[16] = Math.floor(0);
+  analog[17] = Math.floor(0);
+  analog[18] = Math.floor(0);
+  analog[19] = Math.floor(0);
+  analog[20] = Math.floor(0);
+  analog[21] = Math.floor(parseFloat(valores[cont].SA21.replace(/,/, '.')) * 9.78);
+  analog[22] = Math.floor(parseFloat(valores[cont].SA22.replace(/,/, '.')) * 9.78);
+  analog[23] = Math.floor(0);
+  analog[24] = Math.floor(0);
+  analog[25] = Math.floor(0);
+  analog[26] = Math.floor(0);
+  analog[27] = Math.floor(0);
+  analog[28] = Math.floor(0);
+  analog[29] = Math.floor(0);
+  analog[30] = Math.floor(0);
+  analog[31] = Math.floor(0);
+  analog[32] = Math.floor(0);
+  analog[33] = Math.floor(0);
+  analog[34] = Math.floor(0);
+  analog[35] = Math.floor(0);
+  analog[36] = Math.floor(0);
+  analog[37] = Math.floor(0);
+  analog[38] = Math.floor(0);
+  analog[39] = Math.floor(0);
+  analog[40] = Math.floor(0);
+  analog[41] = Math.floor(0);
+  analog[42] = Math.floor(0);
+  analog[43] = Math.floor(0);
+  analog[44] = Math.floor(0);
+  analog[45] = Math.floor(0);
+  analog[46] = Math.floor(0);
+  analog[47] = Math.floor(0);
+  analog[48] = Math.floor(0);
+  analog[49] = Math.floor(0);
+  analog[50] = Math.floor(0);
+  analog[51] = Math.floor(0);
+  analog[52] = Math.floor(0);
+  analog[53] = Math.floor(0);
+  analog[54] = Math.floor(0);
+  analog[55] = Math.floor(0);
+  analog[56] = Math.floor(0);
+  analog[57] = Math.floor(0);
+  analog[58] = Math.floor(0);
+  analog[59] = Math.floor(0);
+  analog[60] = Math.floor(0);
+  analog[61] = Math.floor(0);
+  analog[62] = Math.floor(0);
+  analog[63] = Math.floor(0);
+  analog[64] = Math.floor(0);
+  analog[65] = Math.floor(0);
+  analog[66] = Math.floor(0);
+  analog[67] = Math.floor(0);
+  analog[68] = Math.floor(0);
+  analog[69] = Math.floor(0);
+  analog[70] = Math.floor(0);
+  analog[71] = Math.floor(0);
+  analog[72] = Math.floor(0);
+  analog[73] = Math.floor(0);
+  analog[74] = Math.floor(parseFloat(valores[cont].SA74) * 40.96);
+  analog[75] = Math.floor(0);
+  analog[76] = Math.floor(parseFloat(valores[cont].SA74) * 40.96);
+  analog[78] = Math.floor(parseFloat(valores[cont].SA74) * 40.96);
+  analog[79] = Math.floor(parseFloat(valores[cont].SA74) * 40.96);
+  analog[80] = parseFloat(valores[cont].SA80.replace(/,/, '.'));
+
+  let saida = 
   {
     SA1  : convertRange(analog[0] , config.tps),
     SA2  : convertRange(analog[1] , config.tps),
@@ -87,8 +164,8 @@ const getApiAndEmit = socket =>
     SA14 : convertRange(analog[12] , config.wheelTemperature),
     SA15 : convertRange(analog[13] , config.wheelTemperature),
     SA16 : convertRange(analog[14] , config.steeringRotation),
-    SA17 : -parseFloat(latitude, 10),
-    SA18 : -parseFloat(longitude, 10),
+    // SA17 : -parseFloat(latitude, 10),
+    // SA18 : -parseFloat(longitude, 10),
     SA19 : analog[19],
     SA20 : convertRange(analog[20] , config.hdop),
     SA21 : convertRange(analog[21] , config.imuAccel),
@@ -150,24 +227,10 @@ const getApiAndEmit = socket =>
     SA77 : analog[77],
     SA78 : convertRange(analog[78] , config.pressure),
     SA79 : convertRange(analog[79] , config.pressure),
-
-    SD1  : digital[0],
-    SD2  : digital[1],
-    SD17 : digital[2],
+    SA80 : analog[80],
+    // SD1  : digital[0],
+    // SD2  : digital[1],
+    // SD17 : digital[2],
   }
-  // console.log(valores.SA1);
-  if (typeof analog[0] !== 'undefined')
-  {
-    socket.emit("cheetah_server" , valores);
-  }
+  socket.emit("cheetah_server" , saida);
 };
-
-port.flush(function(err,results){});
-parser.on("data", (data) =>
-{
-  serial.setData(data , config.qtdMedicao , config.qtdDiscretos);
-  // db.insertIntoDatabase(serial.getAnalogArray() , serial.getDigitalArray() );
-  //console.log(db.getSensorArray("A" , 0));
-  console.log(serial.getAnalogArray());
-  // console.log(serial.getDigitalArray());
-});

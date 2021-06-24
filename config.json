@@ -2,6 +2,7 @@
   "length" : 161,
   "qtdMedicao":79,
   "qtdDiscretos":8,
+  "csvFile": "gt3.csv",
   "tensao" :
   {
     "oldMin" : 0, 
@@ -26,22 +27,22 @@
   "wheelSpeed" :
   {
     "oldMin" : 0, 
-    "oldMax" : 65536,
+    "oldMax" : 60000,
     "newMin" : 0,
-    "newMax" : 4000
+    "newMax" : 60000
   },
   "wheelTemperature" :
   {
     "oldMin" : 0, 
-    "oldMax" : 65536,
+    "oldMax" : 12000,
     "newMin" : 0,
-    "newMax" : 100
+    "newMax" : 980
   },
   "steeringRotation" :
   {
-    "oldMin" : 0, 
-    "oldMax" : 4096,
-    "newMin" : 0,
+    "oldMin" : -450, 
+    "oldMax" : 450,
+    "newMin" : -360,
     "newMax" : 360
   },
   "hdop" :
@@ -54,9 +55,9 @@
   "imuAccel" :
   {
     "oldMin" : 0, 
-    "oldMax" : 4096,
+    "oldMax" : 60,
     "newMin" : 0,
-    "newMax" : 360
+    "newMax" : 60
   },
   "imuAngle" :
   {

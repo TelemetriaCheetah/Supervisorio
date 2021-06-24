@@ -46,7 +46,7 @@ class CheetahLinkParser extends Transform
       cursor++;
       if (this.buffer[0] == 255 && this.buffer[this.length-1] == 254)
       {
-        console.log(this.buffer);
+        // console.log(this.buffer);
         //console.log("fim da transmissao");
         this.push(this.buffer);
         this.buffer = Buffer.alloc(this.length);
