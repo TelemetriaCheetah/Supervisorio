@@ -23,7 +23,7 @@ class CheetahLinkFormatter
 
   getDigitalArray()
   {
-    //console.log(this.data);
+    // console.log(this.data);
     let answer = [];
     let a = "";
     for(var i = (this.nAnalog*2)+1 ; i < this.nAnalog*2 + Math.ceil(this.nDigital/8) +1; i++ )

@@ -162,15 +162,12 @@ const getApiAndEmit = socket =>
   }
 };
 
-
-
-
 port.flush(function(err,results){});
 parser.on("data", (data) =>
 {
   serial.setData(data , config.qtdMedicao , config.qtdDiscretos);
-  //db.insertIntoDatabase(serial.getAnalogArray() , serial.getDigitalArray() );
+  // db.insertIntoDatabase(serial.getAnalogArray() , serial.getDigitalArray() );
   //console.log(db.getSensorArray("A" , 0));
-  console.log(serial.getAnalogArray());
+  // console.log(serial.getAnalogArray());
   // console.log(serial.getDigitalArray());
 });

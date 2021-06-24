@@ -40,11 +40,13 @@ class CheetahLinkParser extends Transform
       }
       else
       {
+        console.log(this.buffer);
         console.log("fora de sincronia");
       }
       cursor++;
       if (this.buffer[0] == 255 && this.buffer[this.length-1] == 254)
       {
+        console.log(this.buffer);
         //console.log("fim da transmissao");
         this.push(this.buffer);
         this.buffer = Buffer.alloc(this.length);
@@ -53,6 +55,7 @@ class CheetahLinkParser extends Transform
       }
       else if(this.position === this.length)
       {
+        console.log(this.buffer);
         console.log("mensagem corrompida");
         this.transmitindo = false;
         this.position = 0;

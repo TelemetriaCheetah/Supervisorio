@@ -18,10 +18,12 @@ class DatabaseHandler
   {
     let sql = "SHOW TABLES";
     let tables = this.db.query(sql);
-    if(tables.length<1)
+    if(tables.length<2)
     {
       let sql2 = "CREATE TABLE `telemetriaCheetah`.`sensores` (`id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP) ENGINE = InnoDB;" ;
+      let sql3 = "CREATE TABLE `telemetriaCheetah`.`testeID` (`id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY, `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, `nome` VARCHAR(60) NOT NULL , `responsavel` VARCHAR(60) NOT NULL , `local` VARCHAR(60) NOT NULL , `duracao` INT NOT NULL) ENGINE = InnoDB;" ;
       let query2 = this.db.query(sql2);
+      query2 = this.db.query(sql3);
       this._alterTable();
     }
     else
