@@ -1,2 +1,2 @@
 # Supervisorio
-Interface do sistema de telemetria da equipe Cheetah E-Racing
+Servidor do sistema de telemetria da equipe Cheetah E-Racing
