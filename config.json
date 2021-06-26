@@ -2,7 +2,7 @@
   "length" : 161,
   "qtdMedicao":79,
   "qtdDiscretos":8,
-  "csvFile": "gt3.csv",
+  "csvFile": "gt5.csv",
   "tensao" :
   {
     "oldMin" : 0, 
