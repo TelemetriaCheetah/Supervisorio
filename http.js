@@ -20,7 +20,6 @@ const parser = port.pipe(new CheetahLinkParser({length: config.length})); //EM B
 const db = new DatabaseHandler();
 var serial = new CheetahLinkFormatter();
 
-
 const httpPort = 2000;
 const app = express();
 const server = http.createServer(app);

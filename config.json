@@ -104,9 +104,9 @@
   "bmsSOC" :
   {
     "oldMin" : 0, 
-    "oldMax" : 4096,
+    "oldMax" : 120,
     "newMin" : 0,
-    "newMax" : 360
+    "newMax" : 100
   },
   "bmsFAN" :
   {
@@ -190,7 +190,7 @@
     "oldMin" : 0, 
     "oldMax" : 4096,
     "newMin" : 0,
-    "newMax" : 360
+    "newMax" : 4096
   },
   "inverterTorque" :
   {

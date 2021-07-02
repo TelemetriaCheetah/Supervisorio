@@ -45,7 +45,7 @@ io.on("connection", socket =>
   {
     clearInterval(interval);
   }
-  interval = setInterval(() => getApiAndEmit(socket), 100);
+  interval = setInterval(() => getApiAndEmit(socket), 50);
 });
 
 function convertRange(value, range) 
@@ -59,7 +59,8 @@ var cont = 0;
 const getApiAndEmit = socket => 
 {
   let valores = csv.parseCSV();
-  console.log(parseFloat(valores[cont].SA80.replace(/,/, '.')));
+  // console.log(parseFloat(valores[cont].SA80.replace(/,/, '.')));
+  console.log((parseFloat(valores[cont].SA6)  * 9.549265855 * 60)/(477.94));
   cont++;
   if(cont >= 1500)
     cont = 0;
@@ -100,7 +101,7 @@ const getApiAndEmit = socket =>
   analog[31] = Math.floor(0);
   analog[32] = Math.floor(0);
   analog[33] = Math.floor(0);
-  analog[34] = Math.floor(0);
+  analog[34] = parseFloat(valores[cont].SA34);
   analog[35] = Math.floor(0);
   analog[36] = Math.floor(0);
   analog[37] = Math.floor(0);
@@ -127,7 +128,7 @@ const getApiAndEmit = socket =>
   analog[58] = Math.floor(0);
   analog[59] = Math.floor(0);
   analog[60] = Math.floor(0);
-  analog[61] = Math.floor(0);
+  analog[61] = ( parseFloat(valores[cont].SA6)  * 9.549265855 * 60)/(477.9);
   analog[62] = Math.floor(0);
   analog[63] = Math.floor(0);
   analog[64] = Math.floor(0);
