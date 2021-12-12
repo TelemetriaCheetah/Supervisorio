@@ -6,106 +6,66 @@
     <link rel="stylesheet" href="css/index.min.css">
   </head>
   <body>
-    <div class="grid-principal">
-
-      <div class="barra-titulo2">
-          <div class="barra-titulo-interno2">
-            <div class=""><b>MySQL:</b> Conectado</div>
-            <div class=""><b>ID Teste:</b> 23</div>
-            <div class=""><b>Usuário:</b> Caio Tácito</div>
-            <div class=""><b>TS:</b> 2021-04-27-23-37-42</div>
-            <div class=""><b>Volta atual:</b> 5:25:32 </div>
-            <div class=""><b>Última volta:</b> 7:23:95 </div>
-            <div class=""><b>Diferença:</b> 4:24:22 </div>
-            <div class=""><b>Volta mais rápida:</b> 7:23:95</div>
-          </div>
-      </div>
-
-      <div class="barra-titulo">
-          <div class="barra-titulo-interno">
-            <div id="logo-unifei"><img src="./images/unifei.png"></div>
-            <div class="">Dashboard Geral</div>
-            <div id="logo-cheetah"><img src="./images/logo.png"></div>
-          </div>
-      </div>
-
-      <div class="grid">
-
-        <div class="velocimetro-class">
-          <div class="velocimetro-canvas">
-            <canvas id="velocimetro" class="canvas"></canvas>
-          </div>
-          <div id="velocimetro-texto">
-            81
-          </div>
-        </div>
-
-        <div id="bloco4" class="bloco">
-          <div class="texto-direita-bloco">
-            <div class="bateria-alta">
-              <div id="bateria-alta-img"><img src="./images/bateria.svg"></div>
-              <div id="bateria-alta-interior"></div>
-            </div>
-            <span id="bateria-alta-soc"><b>SOC:</b> <br> 35 %</span>
-            <span id="bateria-alta-tensao"><b>Tensão:</b> <br>60V</span>
-            <span id="bateria-alta-amp"><b>Carga:</b> <br> 32Ah</span>
-            <span id="bateria-alta-corrente"><b>Corrente:</b> <br> -12A</span>
-          </div>
-        </div>
-
-        <div id="bloco9" class="bloco">
-            <div class="estados">
-              <span id="nan"></span>
-              <span id="nan"></span>
-              <span>Relés de isolação:</span>
-              <div id="estado-air">ON</div>
-              <span>Latch IMD:</span>
-              <div id="estado-imd">ON</div>
-              <span>Latch BSPD:</span>
-              <div id="estado-bspd">OFF</div>
-              <span>Latch BMS:</span>
-              <div id="estado-bms">OFF</div>
-              <span>Resultado Self Test:</span>
-              <div id="estado-selftest">PASS</div>
-            </div>
-        </div>
-      </div>
-
-      <div class="barra-lateral">
-        <div class="barra-lateral-flexbox">
-          <div id="barra-dashboard"><a href="index.html"><img src="./images/dash-icon-select.png"></a></div>
-          <div id="barra-carro"><a href="inversor.html"><img src="./images/car-icon.png"></a></div>
-          <div id="barra-bateria"><a href="eletronica.html"><img src="./images/battery-icon.png"></a></div>
-          <div id="barra-stats"><img src="./images/stats-icon.png"></div>
-          <div id="barra-config"><img src="./images/config-icon.png"></div>
-        </div>
-      </div>
-
-      <div class="barra-lateral2">
-        <div class="barra-lateral-flexbox">
-          <div class="barra-lateral-interior">
-            <img src="./images/wifi-3-4.png">
-            <div id="barra-rssi" ><b>RSSI:</b> -74dBm</div>
-            <div id="barra-rtt" ><b>RTT:</b> 128ms</div>
-          </div>
-          <div class="barra-lateral-interior">
-            <img src="./images/clock.svg">
-            <div id="barra-uptime" ><b>Uptime:</b> 179s</div>
-          </div>
-          <div class="barra-lateral-interior">
-            <img src="./images/stop-button.png">
-            <div id="barra-stop" ><b>Abrir AIRs</b></div>
-          </div>
-        </div>
-      </div>
-
+    <div class="barraGenerica" style="width: 185px; height: 160px ; left:20px ; top: 20px ;  text-align: center"> 
+      <div class="texto" style="top: 10px">BMS</div>
+      <div id="SA38" class="textoMed" style="top: 10px"> 120º </div>
     </div>
+
+    <div class="barraGenerica" style="width: 185px; height: 160px ; left:225px ; top: 20px ;  text-align: center"> 
+      <div class="texto" style="top: 10px">FREIO</div>
+      <div id="SA8" class="textoMed" style="top: 10px"> 120º </div>
+    </div>
+
+    <div class="barraGenerica" style="width: 185px; height: 160px ; left:430px ; top: 20px ;  text-align: center"> 
+      <div class="texto" style="top: 10px">INVERS</div>
+      <div id="SA63" class="textoMed" style="top: 10px"> 120º </div>
+    </div>
+
+    <div class="barraGenerica" style="width: 185px; height: 160px ; left:635px ; top: 20px ;  text-align: center"> 
+      <div class="texto" style="top: 10px">GLV(V)</div>
+      <div id="SA55" class="textoMed" style="top: 10px"> 120º </div>
+    </div>
+
+    <div class="barraGenerica" style="width: 390px; height: 320px ; left:20px ; top: 380px ;  text-align: center"> 
+      <div class="texto" style="top: 10px">VELOCIDADE</div>
+      <div id="SA61" class="textoBig" style="top: 30px"> 120º </div>
+    </div>
+
+    <div class="barraGenerica" style="width: 800px; height: 160px ; left:20px ; top: 200px ;"> 
+      <div class="texto" style="top: 15px ; left: 10px">BAT HV</div>
+      <div id="SA34" class="texto" style="top: 25px ; left: 10px">50%</div>
+    </div>
+
+    <div class="barraGenerica" style="width: 390px; height: 150px ; left:430px ; top: 380px ;"> 
+      <button id="botao" style="background-color: black; border: none"> <img class="logo" src="images/logo.png"></img> </button>
+    </div>
+
+    <div class="barraGenerica" style="width: 390px; height: 150px ; left:430px ; top: 550px ;"> 
+      <div class="texto" style="top: 40px ; left: 10px">RPM</div>
+      <div id="SA56" class="textoMed" style="top: -30px ; left: 150px">1871</div>
+    </div>
+
+    <div class="barraGenerica" style="width: 200px; height: 680px ; left:840px ; top: 20px ;text-align: center"> 
+      <div class="texto" style="">TPS</div>
+    </div>
+
+    <div class="barraGenerica" style="width: 200px; height: 680px ; left:1060px ; top: 20px ;text-align: center"> 
+      <div class="texto" style="">FREIO</div>
+    </div>
+
+    <div class="barraTps" style="width: 600px; height: 120px ; left: 190px ; top: 220px">
+      <div id="barraBateria" class="barraTpsInterior"></div>
+    </div>
+
+    <div class="barraTps" style="width: 160px; height: 580px ; left: 860px ; top: 100px">
+      <div id="tps" class="barraTpsInteriorVertical"></div>
+    </div>
+
+    <div class="barraTps" style="width: 160px; height: 580px ; left: 1080px ; top: 100px">
+      <div id="freio" class="barraTpsInteriorVertical"></div>
+    </div>
+
     <script src="/socket.io/socket.io.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="js/gauge.min.js"></script>
-    <script src="js/elements/velocimetro.js"></script>
-    <script src="js/elements/painel.js"></script>
-    <script src="js/elements/temperatura.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

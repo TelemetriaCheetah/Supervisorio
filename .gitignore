@@ -105,4 +105,4 @@ dist
 .tern-port
 
 # Senha mysql
-password.json
+#password.json

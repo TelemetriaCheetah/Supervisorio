@@ -1,30 +1,49 @@
 const socket = io();
 
-var velocimetro = new Velocimetro();
-var indicador1 = new Indicador(1);
-var indicador2 = new Indicador(2);
-var indicador3 = new Indicador(3);
-var indicador4 = new Indicador(4);
-var indicador5 = new Temperatura(5);
-var indicador6 = new Temperatura(6);
-var indicador7 = new Temperatura(7);
-var indicador8 = new Temperatura(8);
-var indicador9 = new Temperatura(9);
-var indicador10 = new Temperatura(10);
-var indicador11 = new Temperatura(11);
-var indicador12 = new Temperatura(12);
-
-socket.on("analog", (message) =>
+socket.on("cheetah_server", (message) =>
 {
-  console.log(message[0]);
-  let sensor1 = message[0];
-  let sensor2 = message[1];
-  velocimetro.atualizaVelocimetro(sensor1);
+  console.log(message.SA76);
+  document.getElementById("SA38").innerHTML = message.SA38 + "º";
+  document.getElementById("SA8").innerHTML = message.SA8 + "º";
+  document.getElementById("SA61").innerHTML = message.SA61;
+  document.getElementById("SA63").innerHTML = message.SA63 + "º";
+  document.getElementById("SA55").innerHTML = message.SA55/10;
+  document.getElementById("SA56").innerHTML = message.SA56;
+  document.getElementById("SA34").innerHTML = (Math.round(message.SA34 * 100) / 100).toFixed(2) + "%";
+
+  document.getElementById("barraBateria").style.width = (Math.round(message.SA34 * 100) / 100).toFixed(2) + "%";
+  document.getElementById("tps").style.height = message.SA1 + "%";
+  document.getElementById("freio").style.height = message.SA76/10 + "%";
+
 });
 
-var myVar = setInterval(emiteMensagem, 50); //Timer principal
+function toggleFullscreen(elem) {
+  elem = elem || document.documentElement;
 
-function emiteMensagem()
-{
-  socket.emit("timer", "");
+  if (!document.fullscreenElement && !document.mozFullScreenElement &&
+    !document.webkitFullscreenElement && !document.msFullscreenElement) {
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.msRequestFullscreen) {
+      elem.msRequestFullscreen();
+    } else if (elem.mozRequestFullScreen) {
+      elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) {
+      elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
+  }
 }
+
+document.getElementById('botao').addEventListener('click', function() {
+  toggleFullscreen();
+});

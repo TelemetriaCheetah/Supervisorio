@@ -2,13 +2,13 @@
   "length" : 161,
   "qtdMedicao":79,
   "qtdDiscretos":8,
-  "csvFile": "gt5.csv",
+  "csvFile": "gt6.csv",
   "tensao" :
   {
     "oldMin" : 0, 
     "oldMax" : 4096,
     "newMin" : 0,
-    "newMax" : 360
+    "newMax" : 4096
   },
   "current" : 
   {
@@ -97,9 +97,9 @@
   "bmsTemperature" :
   {
     "oldMin" : 0, 
-    "oldMax" : 4096,
-    "newMin" : 0,
-    "newMax" : 360
+    "oldMax" : 300,
+    "newMin" : 30,
+    "newMax" : 55
   },
   "bmsSOC" :
   {
@@ -153,9 +153,9 @@
   "inverterRPM" :
   {
     "oldMin" : 0, 
-    "oldMax" : 4096,
+    "oldMax" : 15000,
     "newMin" : 0,
-    "newMax" : 360
+    "newMax" : 15000
   },
   "inverterCurrent" :
   {
@@ -202,9 +202,9 @@
   "inverterTemperature" :
   {
     "oldMin" : 0, 
-    "oldMax" : 4096,
-    "newMin" : 0,
-    "newMax" : 360
+    "oldMax" : 300,
+    "newMin" : 60,
+    "newMax" : 80
   },
   "csPWM" :
   {

@@ -45,7 +45,7 @@ io.on("connection", socket =>
   {
     clearInterval(interval);
   }
-  interval = setInterval(() => getApiAndEmit(socket), 50);
+  interval = setInterval(() => getApiAndEmit(socket), 90);
 });
 
 function convertRange(value, range) 
@@ -62,7 +62,7 @@ const getApiAndEmit = socket =>
   // console.log(parseFloat(valores[cont].SA80.replace(/,/, '.')));
   console.log((parseFloat(valores[cont].SA6)  * 9.549265855 * 60)/(477.94));
   cont++;
-  if(cont >= 1500)
+  if(cont >= 2000)
     cont = 0;
 
   let analog = [];
@@ -101,11 +101,11 @@ const getApiAndEmit = socket =>
   analog[31] = Math.floor(0);
   analog[32] = Math.floor(0);
   analog[33] = Math.floor(0);
-  analog[34] = parseFloat(valores[cont].SA34);
+  analog[34] = parseFloat(valores[cont].SA34.replace(/,/, '.'));
   analog[35] = Math.floor(0);
   analog[36] = Math.floor(0);
   analog[37] = Math.floor(0);
-  analog[38] = Math.floor(0);
+  analog[38] = parseFloat(valores[cont].SA61);
   analog[39] = Math.floor(0);
   analog[40] = Math.floor(0);
   analog[41] = Math.floor(0);
@@ -122,22 +122,22 @@ const getApiAndEmit = socket =>
   analog[52] = Math.floor(0);
   analog[53] = Math.floor(0);
   analog[54] = Math.floor(0);
-  analog[55] = Math.floor(0);
-  analog[56] = Math.floor(0);
+  analog[55] = 115 + Math.floor(Math.random() * 4);
+  analog[56] = parseFloat(valores[cont].SA56.replace(/,/, '.'));
   analog[57] = Math.floor(0);
   analog[58] = Math.floor(0);
   analog[59] = Math.floor(0);
   analog[60] = Math.floor(0);
-  analog[61] = ( parseFloat(valores[cont].SA6)  * 9.549265855 * 60)/(477.9);
+  analog[61] = parseFloat(valores[cont].SA61);
   analog[62] = Math.floor(0);
-  analog[63] = Math.floor(0);
+  analog[63] = parseFloat(valores[cont].SA61);
   analog[64] = Math.floor(0);
   analog[65] = Math.floor(0);
   analog[66] = Math.floor(0);
   analog[67] = Math.floor(0);
   analog[68] = Math.floor(0);
   analog[69] = Math.floor(0);
-  analog[70] = Math.floor(0);
+  analog[70] = 115 + Math.floor(Math.random() * 50)/10;
   analog[71] = Math.floor(0);
   analog[72] = Math.floor(0);
   analog[73] = Math.floor(0);
@@ -182,7 +182,7 @@ const getApiAndEmit = socket =>
     SA31 : convertRange(analog[31] , config.bmsCurrent),
     SA32 : convertRange(analog[32] , config.bmsVoltage),
     SA33 : convertRange(analog[33] , config.bmsVoltage),
-    SA34 : convertRange(analog[34] , config.bmsSOC),
+    SA34 : analog[34],
     SA35 : convertRange(analog[35] , config.bmsSOC),
     SA36 : convertRange(analog[36] , config.bmsCapacity),
     SA37 : analog[37],

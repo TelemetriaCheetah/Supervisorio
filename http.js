@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors")
+const cors = require("cors");
 const http = require("http");
 const path = require("path");
 const fs = require("fs");
@@ -10,7 +10,7 @@ const CheetahLinkFormatter = require('./js/CheetahLinkFormatter');
 const CheetahLinkParser = require('./js/CheetahLinkParser');
 const DatabaseHandler = require('./js/DatabaseHandler');
 const { parse } = require("path");
-const ttyPort = "/dev/ttyACM1";
+const ttyPort = "/dev/ttyUSB0";
 const port = new serialport(ttyPort,{baudRate:115200});
 
 console.log("Módulos carregados");
@@ -77,7 +77,7 @@ const getApiAndEmit = socket =>
     SA5  : convertRange(analog[3] , config.wheelSpeed),
     SA6  : convertRange(analog[4] , config.wheelSpeed),
     SA7  : convertRange(analog[5] , config.wheelSpeed),
-    SA8  : convertRange(analog[6] , config.wheelTemperature),
+    SA8  : Math.round((analog[6] * 0.02 -273.15) * 10) / 10 ,
     SA9  : convertRange(analog[7] , config.wheelTemperature),
     SA10 : convertRange(analog[8] , config.wheelTemperature),
     SA11 : convertRange(analog[9] , config.wheelTemperature),
@@ -125,7 +125,7 @@ const getApiAndEmit = socket =>
     SA53 : convertRange(analog[53] , config.bmsIsol),
     SA54 : convertRange(analog[54] , config.bmsADC),
     SA55 : convertRange(analog[55] , config.tensao),
-    SA56 : convertRange(analog[56] , config.inverterRPM),
+    SA56 : convertRange(analog[7] , config.inverterRPM),
     SA57 : convertRange(analog[57] , config.inverterCurrent),
     SA58 : convertRange(analog[58] , config.inverterFrequency),
     SA59 : convertRange(analog[59] , config.inverterState),
