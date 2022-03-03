@@ -145,7 +145,7 @@ const getApiAndEmit = socket =>
     SA73 : convertRange(analog[73] , config.csVoltage),
     SA74 : convertRange(analog[74] , config.pressure),
     SA75 : convertRange(analog[75] , config.csCurrent),
-    SA76 : convertRange(analog[74] , config.pressure),
+    SA76 : convertRange(analog[77] , config.pressure),
     SA77 : analog[77],
     SA78 : convertRange(analog[78] , config.pressure),
     SA79 : convertRange(analog[79] , config.pressure),
@@ -154,7 +154,7 @@ const getApiAndEmit = socket =>
     SD2  : digital[1],
     SD17 : digital[2],
   }
-  // console.log(valores.SA1);
+  //console.log(valores);
   if (typeof analog[0] !== 'undefined')
   {
     socket.emit("cheetah_server" , valores);

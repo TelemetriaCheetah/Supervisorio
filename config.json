@@ -8,7 +8,7 @@
     "oldMin" : 0, 
     "oldMax" : 4096,
     "newMin" : 0,
-    "newMax" : 4096
+    "newMax" : 120
   },
   "current" : 
   {
