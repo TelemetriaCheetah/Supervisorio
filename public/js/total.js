@@ -3,47 +3,85 @@ const socket = io();
 socket.on("cheetah_server", (message) =>
 {
   console.log(message.SA76);
-  document.getElementById("SA38").innerHTML = message.SA38 + "º";
-  document.getElementById("SA8").innerHTML = message.SA8 + "º";
-  document.getElementById("SA61").innerHTML = message.SA61;
-  document.getElementById("SA63").innerHTML = message.SA63 + "º";
-  document.getElementById("SA55").innerHTML = message.SA55/10;
-  document.getElementById("SA56").innerHTML = message.SA56;
-  document.getElementById("SA34").innerHTML = (Math.round(message.SA34 * 100) / 100).toFixed(2) + "%";
+  document.getElementById("SA1").innerHTML = "SA1 - TPS1: " + message.SA1 + "%";
+  document.getElementById("SA2").innerHTML = "SA2 - TPS2: " + message.SA2 + "%";
+  //document.getElementById("SA3").innerHTML = "SA3 - : " + message.SA + "%";
+  document.getElementById("SA4").innerHTML = "SA4 - Roda Frontal Direita: " + message.SA4 + " RPM";
+  document.getElementById("SA5").innerHTML = "SA5 - Roda Frontal Esquerda: " + message.SA5 + " RPM";
+  document.getElementById("SA6").innerHTML = "SA6 - Roda Traseira Direita: " + message.SA6 + " RPM";
+  document.getElementById("SA7").innerHTML = "SA7 - Roda Traseira Esquerda: " + message.SA7 + " RPM";
+  document.getElementById("SA8").innerHTML = "SA8 - Temperatura Disco Frontal Direito Centro: " + message.SA8 + " ºC";
+  document.getElementById("SA9").innerHTML = "SA9 - Temperatura Disco Frontal Direito Borda: " + message.SA9 + " ºC";
+  document.getElementById("SA10").innerHTML = "SA10 - Temperatura Disco Frontal Esquerdo Centro: " + message.SA10 + " ºC";
+  document.getElementById("SA11").innerHTML = "SA11 - Temperatura Disco Frontal Esquerdo Borda: " + message.SA11 + " ºC";
+  document.getElementById("SA12").innerHTML = "SA12 - Temperatura Disco Traseiro Direito Centro: " + message.SA12 + " ºC";
+  document.getElementById("SA13").innerHTML = "SA13 - Temperatura Disco Traseiro Direito Borda: " + message.SA13 + " ºC";
+  document.getElementById("SA14").innerHTML = "SA14 - Temperatura Disco Traseiro Esquerdo Centro: " + message.SA14 + " ºC";
+  document.getElementById("SA15").innerHTML = "SA15 - Temperatura Disco Traseiro Esquerdo Borda: " + message.SA15 + " ºC";
+  document.getElementById("SA16").innerHTML = "SA16 - Encoder Volante: " + message.SA16 + " º";
+  document.getElementById("SA17").innerHTML = "SA17 - Latitude: " + message.SA17 + " N";
+  document.getElementById("SA18").innerHTML = "SA18 - Longitude: " + message.SA18 + " L";
+  document.getElementById("SA19").innerHTML = "SA19 - Contagem de satélites: " + message.SA19 + " ";
+  document.getElementById("SA20").innerHTML = "SA20 - HDOP: " + message.SA20 + " ";
+  document.getElementById("SA21").innerHTML = "SA21 - Aceleração X: " + message.SA21 + " m/s²";
+  document.getElementById("SA22").innerHTML = "SA22 - Aceleração Y: " + message.SA22 + " m/s²";
+  document.getElementById("SA23").innerHTML = "SA23 - Aceleração Z: " + message.SA23 + " m/s²";
+  document.getElementById("SA24").innerHTML = "SA24 - Velocidade Angular X: " + message.SA24 + " m/s";
+  document.getElementById("SA25").innerHTML = "SA25 - Velocidade Angular Y: " + message.SA25 + " m/s";
+  document.getElementById("SA26").innerHTML = "SA26 - Velocidade Angular Z: " + message.SA26 + " m/s";
+  document.getElementById("SA27").innerHTML = "SA27 - Campo magnético X: " + message.SA27 + " uT";
+  document.getElementById("SA28").innerHTML = "SA28 - Campo magnético Y: " + message.SA28 + " uT";
+  document.getElementById("SA29").innerHTML = "SA29 - Campo magnético Z: " + message.SA29 + " uT";
+  document.getElementById("SA30").innerHTML = "SA30 - Temperatura Case Embarcados: " + message.SA30 + " ºC";
+  document.getElementById("SA31").innerHTML = "SA31 - Corrente BMS: " + message.SA31 + " A";
+  document.getElementById("SA32").innerHTML = "SA32 - Tensão BMS: " + message.SA32 + " V";
+  document.getElementById("SA33").innerHTML = "SA33 - Tensão Circuito Aberto BMS: " + message.SA33 + " V";
+  document.getElementById("SA34").innerHTML = "SA34 - SOC Acumulador: " + message.SA34 + " %";
+  document.getElementById("SA35").innerHTML = "SA35 - SSOC Acumulador: " + message.SA35 + " %";
+  document.getElementById("SA36").innerHTML = "SA36 - Amp hours BMS: " + message.SA36 + " Ah";
+  document.getElementById("SA37").innerHTML = "SA37 - Health BMS: " + message.SA37 + " ";
+  document.getElementById("SA38").innerHTML = "SA38 - Temperatura Alta BMS: " + message.SA38 + " ºC";
+  document.getElementById("SA39").innerHTML = "SA39 - Temperatura Baixa BMS: " + message.SA39 + " ºC";
+  document.getElementById("SA40").innerHTML = "SA40 - Temperatura Média BMS: " + message.SA40 + " ºC";
+  document.getElementById("SA41").innerHTML = "SA41 - Temperatura Interna BMS: " + message.SA41 + " ºC";
+  document.getElementById("SA42").innerHTML = "SA42 - Tensão Alta BMS: " + message.SA42 + " V";
+  document.getElementById("SA43").innerHTML = "SA43 - Tensão Baixa BMS: " + message.SA43 + " V";
+  document.getElementById("SA44").innerHTML = "SA44 - Tensão Média BMS: " + message.SA44 + " V";
+  document.getElementById("SA45").innerHTML = "SA45 - Resistência Alta BMS: " + message.SA45 + " \u03A9";
+  document.getElementById("SA46").innerHTML = "SA46 - Resistência Baixa BMS: " + message.SA46 + " \u03A9";
+  document.getElementById("SA47").innerHTML = "SA47 - Resistência Média BMS: " + message.SA47 + " \u03A9";
+  document.getElementById("SA48").innerHTML = "SA48 - IDs Temperatura BMS: " + message.SA48 + " ";
+  document.getElementById("SA49").innerHTML = "SA49 - IDs Tensão BMS: " + message.SA49 + " ";
+  document.getElementById("SA50").innerHTML = "SA50 - IDs Resistência BMS: " + message.SA50 + " ";
+  document.getElementById("SA51").innerHTML = "SA51 - Velocidade do Fan BMS: " + message.SA51 + " RPM";
+  document.getElementById("SA52").innerHTML = "SA52 - Tensão de alimentação BMS: " + message.SA52 + " V";
+  document.getElementById("SA53").innerHTML = "SA53 - Isolamento BMS: " + message.SA53 + " kV";
+  document.getElementById("SA54").innerHTML = "SA54 - ADC1 BMS: " + message.SA54 + " ";
+  document.getElementById("SA55").innerHTML = "SA55 - Tensão GLV: " + message.SA55 + " V";
+  document.getElementById("SA56").innerHTML = "SA56 - Rotação Motor: " + message.SA56 + " RPM";
+  document.getElementById("SA57").innerHTML = "SA57 - Corrente Inversor: " + message.SA57 + " A";
+  document.getElementById("SA58").innerHTML = "SA58 - Frequência Inversor: " + message.SA58 + " Hz";
+  document.getElementById("SA59").innerHTML = "SA59 - Estado Inversor: " + message.SA59 + " ";
+  document.getElementById("SA60").innerHTML = "SA60 - Tensão Saída Inversor: " + message.SA60 + " VAC";
+  document.getElementById("SA61").innerHTML = "SA61 - Velocidade Veículo: " + message.SA61 + " Km/h";
+  document.getElementById("SA62").innerHTML = "SA62 - Torque no motor: " + message.SA62 + " Nm";
+  document.getElementById("SA63").innerHTML = "SA63 - Temperatura MOSFET 1: " + message.SA63 + " ºC";
+  document.getElementById("SA64").innerHTML = "SA64 - Temperatura MOSFET 2: " + message.SA64 + " ºC";
+  document.getElementById("SA65").innerHTML = "SA65 - Temperatura Inversor: " + message.SA65 + " ºC";
+  document.getElementById("SA66").innerHTML = "SA66 - Sobrecarga Inversor: " + message.SA66 + " ";
+  document.getElementById("SA67").innerHTML = "SA67 - Alarme Inversor: " + message.SA67 + " ";
+  document.getElementById("SA68").innerHTML = "SA68 - Falha atual Inversor: " + message.SA68 + " ";
+  document.getElementById("SA69").innerHTML = "SA69 - Falha anterior Inversor: " + message.SA69 + " ";
+  document.getElementById("SA70").innerHTML = "SA70 - Sensor Hall GLV: " + message.SA70 + " A";
+  document.getElementById("SA71").innerHTML = "SA71 - IMD PWM: " + message.SA71 + " ";
+  document.getElementById("SA72").innerHTML = "SA72 - Setpoint Cebolinha: " + message.SA72 + " V";
+  document.getElementById("SA73").innerHTML = "SA73 - Setpoint Sensor Hall: " + message.SA73 + " V";
+  document.getElementById("SA74").innerHTML = "SA74 - Pressão de freios 1: " + message.SA74 + " MPa";
+  document.getElementById("SA75").innerHTML = "SA75 - Sensor Hall CS: " + message.SA75 + " A";
+  document.getElementById("SA76").innerHTML = "SA76 - Pressão de freios 2: " + message.SA76 + " MPa";
+  document.getElementById("SA77").innerHTML = "SA77 - POST: " + message.SA77 + " ";
+  document.getElementById("SA78").innerHTML = "SA78 - Pressão de freios 3: " + message.SA78 + " MPa";
+  document.getElementById("SA79").innerHTML = "SA79 - Pressão de freios 4: " + message.SA79 + " MPa";
+  document.getElementById("SA80").innerHTML = "SA80 - Flags Inversor: " + (message.SA80 >>> 0).toString(2)+ " ";
 
-  document.getElementById("barraBateria").style.width = (Math.round(message.SA34 * 100) / 100).toFixed(2) + "%";
-  document.getElementById("tps").style.height = message.SA1 + "%";
-  document.getElementById("freio").style.height = message.SA76/10 + "%";
-
-});
-
-function toggleFullscreen(elem) {
-  elem = elem || document.documentElement;
-
-  if (!document.fullscreenElement && !document.mozFullScreenElement &&
-    !document.webkitFullscreenElement && !document.msFullscreenElement) {
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.msRequestFullscreen) {
-      elem.msRequestFullscreen();
-    } else if (elem.mozRequestFullScreen) {
-      elem.mozRequestFullScreen();
-    } else if (elem.webkitRequestFullscreen) {
-      elem.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-    }
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    }
-  }
-}
-
-document.getElementById('botao').addEventListener('click', function() {
-  toggleFullscreen();
 });

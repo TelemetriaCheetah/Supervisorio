@@ -77,7 +77,7 @@ const getApiAndEmit = socket =>
     SA5  : convertRange(analog[3] , config.wheelSpeed),
     SA6  : convertRange(analog[4] , config.wheelSpeed),
     SA7  : convertRange(analog[5] , config.wheelSpeed),
-    SA8  : Math.round((analog[6] * 0.02 -273.15) * 10) / 10 ,
+    SA8  : convertRange(analog[6] , config.wheelTemperature),
     SA9  : convertRange(analog[7] , config.wheelTemperature),
     SA10 : convertRange(analog[8] , config.wheelTemperature),
     SA11 : convertRange(analog[9] , config.wheelTemperature),
@@ -145,16 +145,17 @@ const getApiAndEmit = socket =>
     SA73 : convertRange(analog[73] , config.csVoltage),
     SA74 : convertRange(analog[74] , config.pressure),
     SA75 : convertRange(analog[75] , config.csCurrent),
-    SA76 : convertRange(analog[77] , config.pressure),
+    SA76 : convertRange(analog[76] , config.pressure),
     SA77 : analog[77],
     SA78 : convertRange(analog[78] , config.pressure),
     SA79 : convertRange(analog[79] , config.pressure),
+    SA80 : analog[80],
 
     SD1  : digital[0],
     SD2  : digital[1],
     SD17 : digital[2],
   }
-  //console.log(valores);
+  //console.log(analog[80]);
   if (typeof analog[0] !== 'undefined')
   {
     socket.emit("cheetah_server" , valores);

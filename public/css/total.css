@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+  }
+  
+  body {
+    background-color: black;
+  }
+  
+  .barraGenerica {
+    position: absolute;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 7px;
+  }
+  
+  .texto {
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 40px;
+  }
+  
+  .textoMed {
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 70px;
+  }
+  
+  .textoBig {
+    position: relative;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 160px;
+  }
+  
+  .barraTps {
+    position: absolute;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 7px;
+    z-index: 30;
+  }
+  
+  .barraTpsInterior {
+    position: absolute;
+    height: 100%;
+    background-color: #AC0000;
+    z-index: 10;
+  }
+  
+  .barraTpsInteriorVertical {
+    position: absolute;
+    width: 100%;
+    transition: height 1s;
+    bottom: 0px;
+    background-color: #AC0000;
+    z-index: 10;
+  }
+  
+  .logo {
+    position: relative;
+    left: 55px;
+    top: 25px;
+    height: 100px;
+  }
+  

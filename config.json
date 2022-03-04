@@ -1,6 +1,6 @@
 {
-  "length" : 161,
-  "qtdMedicao":79,
+  "length" : 165,
+  "qtdMedicao":81,
   "qtdDiscretos":8,
   "csvFile": "gt6.csv",
   "tensao" :
@@ -8,7 +8,7 @@
     "oldMin" : 0, 
     "oldMax" : 4096,
     "newMin" : 0,
-    "newMax" : 120
+    "newMax" : 12
   },
   "current" : 
   {
@@ -20,7 +20,7 @@
   "pressure" :
   {
     "oldMin" : 0, 
-    "oldMax" : 4096,
+    "oldMax" : 65535,
     "newMin" : 0,
     "newMax" : 1000
   },
@@ -98,8 +98,8 @@
   {
     "oldMin" : 0, 
     "oldMax" : 300,
-    "newMin" : 30,
-    "newMax" : 55
+    "newMin" : 0,
+    "newMax" : 300
   },
   "bmsSOC" :
   {
@@ -153,9 +153,9 @@
   "inverterRPM" :
   {
     "oldMin" : 0, 
-    "oldMax" : 15000,
+    "oldMax" : 65535,
     "newMin" : 0,
-    "newMax" : 15000
+    "newMax" : 18000
   },
   "inverterCurrent" :
   {
@@ -174,9 +174,9 @@
   "inverterState" :
   {
     "oldMin" : 0, 
-    "oldMax" : 4096,
+    "oldMax" : 65535,
     "newMin" : 0,
-    "newMax" : 360
+    "newMax" : 65535
   },
   "inverterVoltage" :
   {
@@ -188,9 +188,9 @@
   "inverterSpeed" :
   {
     "oldMin" : 0, 
-    "oldMax" : 4096,
+    "oldMax" : 65535,
     "newMin" : 0,
-    "newMax" : 4096
+    "newMax" : 200
   },
   "inverterTorque" :
   {
@@ -202,9 +202,9 @@
   "inverterTemperature" :
   {
     "oldMin" : 0, 
-    "oldMax" : 300,
-    "newMin" : 60,
-    "newMax" : 80
+    "oldMax" : 65535,
+    "newMin" : 0,
+    "newMax" : 6553
   },
   "csPWM" :
   {
@@ -230,7 +230,7 @@
   "tps" :
   {
     "oldMin" : 0, 
-    "oldMax" : 4096,
+    "oldMax" : 65535,
     "newMin" : 0,
     "newMax" : 100
   }
