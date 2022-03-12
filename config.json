@@ -160,9 +160,9 @@
   "inverterCurrent" :
   {
     "oldMin" : 0, 
-    "oldMax" : 4096,
+    "oldMax" : 65535,
     "newMin" : 0,
-    "newMax" : 360
+    "newMax" : 6553
   },
   "inverterFrequency" :
   {
