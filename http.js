@@ -17,7 +17,7 @@ console.log("Módulos carregados");
 
 var config = JSON.parse(fs.readFileSync('./config.json'));
 const parser = port.pipe(new CheetahLinkParser({length: config.length})); //EM BYTES, CONSULTAR DOCUMENTACAO
-const db = new DatabaseHandler();
+// const db = new DatabaseHandler();
 var serial = new CheetahLinkFormatter();
 
 const httpPort = 2000;
